@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TOC Construction Inc.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    },
+                    colors: {
+                        custom: {
+                            darkblue: '#112E81',
+                            purple: '#4647AE',
+                            blue: '#4382DF',
+                            lightbg: '#AACCD6',
+                            white: '#FFFFFF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* CSS Keyframes para sa Automatic Continuous Scrolling */
+        @keyframes scroll-infinite {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .partner-track {
+            display: flex;
+            width: max-content;
+            animation: scroll-infinite 25s linear infinite;
+        }
+
+        /* Humihinto ang scroll kapag in-hover ang mouse */
+        .partner-track:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+        <div class="max-w-full mx-auto px-6 sm:px-10 lg:px-12">
+            <div class="flex justify-between h-24 items-center">                
+                <div class="flex items-center gap-3">
+                    <div class="h-12 w-12 bg-custom-darkblue flex items-center justify-center rounded shadow">
+                        <i class="fa-solid fa-trowel-bricks text-custom-white text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-2xl text-custom-darkblue tracking-tight leading-none">TOC</span>
+                        <span class="font-heading font-bold text-xs text-custom-blue tracking-widest mt-0.5">CONSTRUCTION</span>
+                    </div>
+                </div>                
+                <div class="hidden md:flex items-center gap-1 text-[#3f4e60]">
+                    <a href="index.html" class="hover:bg-gray-100 hover:text-[#112E81] px-4 rounded-[4px] font-heading font-bold text-[14px] uppercase tracking-wider transition-all flex items-center justify-center h-11">Home</a>              
+                    <a href="about.html" class="bg-[#112E81] text-white px-4 rounded-[4px] shadow-sm font-heading font-bold text-[14px] uppercase tracking-wider transition-all flex items-center justify-center h-11">About Us</a>
+                    <a href="projects.html" class="hover:bg-gray-100 hover:text-[#112E81] px-4 rounded-[4px] font-heading font-bold text-[14px] uppercase tracking-wider transition-all flex items-center justify-center h-11">Our Projects</a>
+                    <a href="careers.html" class="hover:bg-gray-100 hover:text-[#112E81] px-4 rounded-[4px] font-heading font-bold text-[14px] uppercase tracking-wider transition-all flex items-center justify-center h-11">Careers</a>
+                    <a href="contact.html" class="hover:bg-gray-100 hover:text-[#112E81] px-4 rounded-[4px] font-heading font-bold text-[14px] uppercase tracking-wider transition-all flex items-center justify-center h-11">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Header -->
+        <header class="relative h-[45vh] min-h-[320px] bg-black flex items-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-custom-darkblue/90 via-custom-darkblue/50 to-transparent z-10"></div>            
+            
+            <div class="relative z-20 w-full max-w-full mx-auto px-6 sm:px-10 lg:px-12 text-left">
+                <span class="text-custom-lightbg uppercase tracking-widest font-heading font-bold text-sm block mb-3">Inside TOC Construction</span>
+                <h1 class="text-4xl sm:text-6xl font-heading font-extrabold text-custom-white uppercase tracking-tight">
+                    About Our Team
+                </h1>
+                <div class="w-24 h-1.5 bg-custom-blue mt-6"></div>
+            </div>
+        </header>
+
+        <!-- Corporate Life Section -->
+        <section id="corporate-life" class="py-24 bg-custom-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex items-center gap-2 text-custom-blue">
+                            <i class="fa-solid fa-people-group text-lg"></i>
+                            <span class="font-heading font-bold text-xs uppercase tracking-wider">Workplace & Culture</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-custom-darkblue tracking-tight uppercase">
+                            Corporate Life <span class="block text-gray-500 font-light text-xl mt-1 normal-case font-sans">A Culture of Innovation and Safety</span>
+                        </h2>
+                        <div class="w-12 h-1 bg-custom-purple"></div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            At TOC Construction, we don't just build structures—we also foster a dynamic, professional, and inclusive workplace for our employees. Our corporate culture is centred on teamwork, continuous learning, and engineering excellence.
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            From our modern office environment to our field operations, we promote a culture that values safety, encourages innovative problem-solving, and supports a healthy work-life balance, empowering our teams to excel.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-6 rounded border-l-4 border-custom-darkblue shadow-sm">
+                            <i class="fa-solid fa-helmet-safety text-2xl text-custom-blue mb-3"></i>
+                            <h4 class="font-heading font-bold text-sm uppercase text-custom-darkblue">Safety First</h4>
+                            <p class="text-gray-500 text-xs mt-1 font-sans">Zero-accident workspace policy sa lahat ng on-site projects.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded border-l-4 border-custom-purple shadow-sm">
+                            <i class="fa-solid fa-graduation-cap text-2xl text-custom-purple mb-3"></i>
+                            <h4 class="font-heading font-bold text-sm uppercase text-custom-darkblue">Growth</h4>
+                            <p class="text-gray-500 text-xs mt-1 font-sans">Regular technical training and professional development pathing.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded border-l-4 border-custom-purple shadow-sm">
+                            <i class="fa-solid fa-handshake-angle text-2xl text-custom-purple mb-3"></i>
+                            <h4 class="font-heading font-bold text-sm uppercase text-custom-darkblue">Teamwork</h4>
+                            <p class="text-gray-500 text-xs mt-1 font-sans">Collaborative workflows in between of field and corporate office.</p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded border-l-4 border-custom-darkblue shadow-sm">
+                            <i class="fa-solid fa-lightbulb text-2xl text-custom-blue mb-3"></i>
+                            <h4 class="font-heading font-bold text-sm uppercase text-custom-darkblue">Innovation</h4>
+                            <p class="text-gray-500 text-xs mt-1 font-sans">Usage of new digital platforms and structural software.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section (AUTOMATIC SCROLLING) -->
+        <section id="partners" class="bg-custom-darkblue text-custom-white py-24 z-10 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-custom-lightbg font-heading font-bold text-xs uppercase tracking-widest block mb-2">Alliances & Trusts</span>
+                    <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-custom-white tracking-tight uppercase">Our Partners</h2>
+                    <div class="w-12 h-1 bg-custom-blue mx-auto mt-4"></div>
+                </div>
+            </div>
+
+            <!-- Auto-Scrolling Marquee Wrapper -->
+            <div class="w-full overflow-hidden">
+                <div class="partner-track gap-6 py-4 px-3">
+                    
+                    <!-- First Set of Partners -->
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-building text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Camella Homes</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-faucet text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">PrimeWater</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-store text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Vista Malls</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-city text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Golden MV</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-house text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Bria Homes</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-tents text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Lumina Homes</span>
+                    </div>
+
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-building text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Camella Homes</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-faucet text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">PrimeWater</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-store text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Vista Malls</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-city text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Golden MV</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-house text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Bria Homes</span>
+                    </div>
+
+                    <div class="bg-custom-white hover:bg-gray-50 w-[250px] md:w-[280px] py-8 px-4 rounded-xl transition-all flex flex-col items-center gap-3 border border-white/20 shadow-lg group shrink-0 transform hover:-translate-y-1">
+                        <i class="fa-solid fa-tents text-3xl text-custom-darkblue group-hover:scale-110 transition-transform"></i>
+                        <span class="font-heading font-extrabold text-xs uppercase tracking-wider text-custom-darkblue">Lumina Homes</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative text-custom-white font-heading pt-6">
+        <div class="bg-[#0f3294] h-10 w-full border-b border-white/10"></div>
+        
+        <div class="absolute top-10 left-0 right-0 z-30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <a href="#" class="absolute right-4 sm:right-8 -top-6 bg-[#e06510] hover:bg-custom-white hover:text-[#e06510] h-12 w-12 rounded-full flex items-center justify-center shadow-md transition-all text-custom-white">
+                    <i class="fa-solid fa-arrow-up text-xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-custom-darkblue pt-20 pb-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-16">
+                    
+                    <div class="md:col-span-4 flex items-center gap-3">
+                        <div class="h-12 w-12 bg-custom-white flex items-center justify-center rounded shadow">
+                            <i class="fa-solid fa-trowel-bricks text-custom-darkblue text-2xl"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-3xl font-extrabold text-custom-white tracking-tight leading-none">TOC</span>
+                            <span class="text-xs font-bold text-custom-lightbg tracking-widest mt-0.5">CONSTRUCTION, INC.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:col-span-4 space-y-4 text-sm font-semibold tracking-wide">
+                        <h4 class="text-xl font-extrabold uppercase text-custom-white">ADDRESS</h4>
+                        <p class="text-gray-200 leading-relaxed font-normal font-sans text-xs sm:text-sm">
+                            Unit 415, 6772 Ayala Ave,<br>
+                            Makati City, Metro Manila,<br>
+                            Philippines<br>
+                            <span class="block mt-2 font-semibold">info@tocconstruction.com.ph</span>
+                            <span class="block text-gray-300 font-sans font-light mt-1">T: +63 (02) 0000-0000</span>
+                            <span class="block text-gray-300 font-sans font-light">TF: +63 (02) 1111-1111</span>
+                        </p>
+                    </div>
+                    
+                    <div class="md:col-span-4 space-y-6">
+                        <div class="space-y-3">
+                            <h4 class="text-xl font-extrabold uppercase text-custom-white tracking-wide">FOLLOW US</h4>
+                            <div class="flex space-x-5 text-xl text-gray-200">
+                                <a href="#" class="hover:text-custom-lightbg transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-custom-lightbg transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="hover:text-custom-lightbg transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-custom-lightbg transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="pt-2">
+                            <a href="#" class="text-xl font-extrabold uppercase text-custom-white hover:text-custom-lightbg transition-colors tracking-wide block">
+                                PRIVACY POLICY
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="text-center text-xs sm:text-sm text-gray-300 font-sans font-normal tracking-wide border-t border-white/5 pt-8">
+                    <p>&copy; 2026 TOC Construction, Inc. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

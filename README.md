@@ -1,27 +1,16 @@
-Welcome to the TOC Construction repository! This project contains the following main files and directories:
+# React + Vite
 
-* **HTML Pages**: 
-  * `index.html` - Homepage
-  * `about.html` - About Us page
-  * `careers.html` - Careers and job openings
-  * `contact.html` - Contact information and form
-  * `projects.html` - Showcase of projects
-* **Source Code (`src/`)**: 
-  * `main.jsx` - Main application entry point for React
-  * `index.css` - Global stylesheet configurations
-  * `assets/` - Contains images and graphics like `hero.png`, `react.svg`, and `vite.svg`
-* **Configuration**: 
-  * `package.json` & `package-lock.json` - Node.js dependencies and scripts
-  * `vite.config.js` - Vite configuration
-  * `eslint.config.js` - ESLint configuration for code linting
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Getting Started
+Currently, two official plugins are available:
 
-1. Clone or download the repository ZIP archive [toc-construction-main.zip]
-2. Install dependencies:
-   ```bash
-   npm install 
-3. Run the development server:
-   `npm run dev`
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-   
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
