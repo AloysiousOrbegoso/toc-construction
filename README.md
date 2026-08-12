@@ -17,7 +17,7 @@ Welcome to the TOC Construction repository! This project contains the following 
 
 ## Getting Started
 
-1. Clone or download the repository ZIP archive [toc-construction-main.zip]
+1. Clone the repository
 2. Install dependencies:
    ```bash
    npm install 
