@@ -1,7 +1,4 @@
-# TOC Construction — Marketing Page
-
-A React implementation of the TOC Construction landing page, built section by section:
-About/Our Story, Featured Projects, Careers, CTA banner, Client Testimonials, and Footer.
+# TOC Construction
 
 ## Getting started
 
