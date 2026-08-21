@@ -1,22 +1,17 @@
-import React from "react";
-import "./styles/tokens.css";
 
-import AboutStory from "./components/AboutStory";
-import FeaturedProjects from "./components/FeaturedProjects";
+import "./App.css";
+import About_Us from "./components/About_Us";
+import Projects from "./components/Projects";
 import Careers from "./components/Careers";
-import CTABanner from "./components/CTABanner";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
 
-export default function App() {
-  return (
-    <div className="toc-root">
-      <AboutStory />
-      <FeaturedProjects />
-      <Careers />
-      <CTABanner />
-      <Testimonials />
-      <Footer />
-    </div>
-  );
+function App() {
+    return (
+        <main className="min-h-screen overflow-hidden">
+            <About_Us />
+            <Projects />
+            <Careers />
+        </main>
+    );
 }
+
+export default App;
