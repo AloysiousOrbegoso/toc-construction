@@ -12,12 +12,16 @@
   transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease,
     border-color 0.18s ease;
 }
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 .btn-primary {
   background: var(--color-blue-500);
   color: #fff;
 }
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
   background: #2650c2;
   transform: translateY(-1px);
   box-shadow: 0 10px 24px -8px rgba(47, 95, 224, 0.55);
@@ -28,7 +32,7 @@
   color: #fff;
   border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
-.btn-outline:hover {
+.btn-outline:hover:not(:disabled) {
   border-color: #fff;
   background: rgba(255, 255, 255, 0.06);
 }

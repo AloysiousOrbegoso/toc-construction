@@ -1,6 +1,6 @@
-import React from "react";
 import { footerContent } from "../data/content";
 import {
+  BrandMarkIcon,
   FacebookIcon,
   TwitterIcon,
   InstagramIcon,
@@ -8,7 +8,6 @@ import {
   PhoneIcon,
   MailIcon,
   PinIcon,
-  BrandMarkIcon,
 } from "./ui/icons";
 import "./Footer.css";
 

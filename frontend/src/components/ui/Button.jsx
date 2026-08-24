@@ -1,10 +1,8 @@
-import React from "react";
+import "./Button.css";
 
 /**
- * Shared Button used across all sections.
- *
  * variant: "primary" | "outline"
- * All other props (onClick, type, etc.) pass through to the underlying <button>.
+ * All other props (onClick, type, disabled, etc.) pass through to <button>.
  */
 export default function Button({ variant = "primary", children, className = "", ...rest }) {
   const variantClass = variant === "outline" ? "btn-outline" : "btn-primary";
