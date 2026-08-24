@@ -3,16 +3,6 @@
   background-image: radial-gradient(1000px 420px at 15% 0%, rgba(47, 95, 224, 0.22), transparent 60%);
 }
 
-.cta-eyebrow {
-  color: var(--color-blue-300);
-}
-.cta-title {
-  color: #fff;
-}
-.cta-body {
-  color: #a9b4c6;
-}
-
 .cta-grid {
   display: flex;
   flex-wrap: wrap;
@@ -45,7 +35,17 @@
   background: linear-gradient(200deg, rgba(10, 25, 48, 0.15), transparent 55%);
 }
 
-/* Signature detail: measured tick marks like a tape measure */
+.cta-eyebrow {
+  color: var(--color-blue-300);
+}
+.cta-title {
+  color: #fff;
+}
+.cta-text-col .body-text {
+  color: var(--color-muted-on-dark);
+}
+
+/* signature: measured tick marks like a tape measure, echoing "let's build" */
 .tick-rule {
   display: flex;
   align-items: flex-end;

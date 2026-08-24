@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./ui/Button";
 import { ctaContent } from "../data/content";
 import "./CTABanner.css";
@@ -17,7 +16,7 @@ export default function CTABanner() {
           </div>
         </div>
 
-        <div className="cta-col">
+        <div className="cta-col cta-text-col">
           <div className="tick-rule" aria-hidden="true">
             {Array.from({ length: TICK_COUNT }).map((_, i) => (
               <span key={i} />
@@ -25,7 +24,7 @@ export default function CTABanner() {
           </div>
           <p className="eyebrow uppercase mb-3 cta-eyebrow">{eyebrow}</p>
           <h2 className="h2-display mb-5 cta-title">{title}</h2>
-          <p className="body-text mb-8 cta-body">{body}</p>
+          <p className="body-text mb-8">{body}</p>
           <Button>{cta}</Button>
         </div>
       </div>

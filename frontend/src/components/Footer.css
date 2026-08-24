@@ -90,6 +90,7 @@
   font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.1rem);
   margin-bottom: clamp(1rem, 0.9rem + 0.5vw, 1.4rem);
 }
+
 .foot-links {
   display: flex;
   flex-direction: column;
