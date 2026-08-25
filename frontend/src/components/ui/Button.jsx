@@ -1,4 +1,4 @@
-import "./Button.css";
+import "./styling/Button.css";
 
 /**
  * variant: "primary" | "outline"

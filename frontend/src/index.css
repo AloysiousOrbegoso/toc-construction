@@ -1,0 +1,596 @@
+/* Basic reset so every browser starts from the same blank slate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* ===== Navbar ===== */
+
+/* The full-width bar. Sticks to the top of the page when you scroll. */
+.navbar {
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 81px;
+  display: flex;
+  align-items: center;
+}
+
+/* Keeps the navbar content centered and not too wide on big screens */
+.navbar-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 88px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo image size */
+.navbar-logo img {
+  height: 44px;
+  display: block;
+}
+
+/* Hamburger toggle, hidden until the menu collapses on smaller screens */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 32px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggle-bar {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* The list of menu links */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-link {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: black;
+  position: relative;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.navbar-link:hover {
+  color: #1e56a0;
+}
+
+.navbar-link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 39px;
+  height: 2px;
+  background-color: #07112b;
+}
+
+/* The dark rounded "Contact Us" button */
+.navbar-button {
+  background-color: #163172;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.navbar-button:hover {
+  background-color: #1e56a0;
+}
+
+/* On smaller screens, collapse the menu into a toggleable dropdown */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 48px;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 81px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-menu.is-open {
+    max-height: 400px;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+  }
+
+  .navbar-link {
+    width: 100%;
+    padding: 16px 48px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .navbar-link.is-active::after {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 72px;
+  }
+
+  .navbar-container {
+    padding: 0 24px;
+  }
+
+  .navbar-logo img {
+    height: 36px;
+  }
+
+  .navbar-menu {
+    top: 72px;
+  }
+}
+
+
+ /* HERO SECTION */
+
+.hero-section{
+  background-color: #07112B;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  min-height: 840px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content{
+  flex: 1 1 60%;
+  max-width: 800px;
+  padding: 120px 60px 60px 120px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title{
+  font-family: "Inter", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: 3.72px;
+  margin-bottom: 32px;
+}
+
+.hero-p{
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.36;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.hero-container-btn{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.hero-btn1,
+.hero-btn2{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 16px 32px;
+  white-space: nowrap;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-btn1:hover,
+.hero-btn2:hover{
+  transform: translateY(-2px);
+}
+
+.hero-btn1{
+  background-color: #1e56a0;
+  color: white;
+  border: none;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-btn1:hover{
+  background-color: #163172;
+}
+
+.hero-btn2{
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-btn2:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-arrow{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-arrow svg{
+  width: 100%;
+  height: 100%;
+}
+
+.hero-stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.hero-stat{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-stat-icon{
+  width: 36px;
+  height: 37px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.hero-stat-number{
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.hero-stat-label{
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  letter-spacing: -0.28px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+}
+
+.hero-image{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(1690px, 100%);
+  z-index: 1;
+}
+
+.hero-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  display: block;
+}
+
+.hero-section2{
+  background-color: #f6f6f6;
+}
+
+.hero-content2{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 88px;
+  font-family: "Manrope", sans-serif;
+}
+
+.hero-content3{
+  flex: 1 1 50%;
+  max-width: 530px;
+}
+
+.hero-eyebrow{
+  color: #1a1c1c;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.hero-h1{
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1a1c1c;
+  margin-bottom: 28px;
+}
+
+.hero-content3-p{
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1a1c1c;
+  max-width: 600px;
+}
+
+.check-list{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 32px 0 40px;
+}
+
+.check-item{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 21px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.check-icon{
+  width: 31px;
+  height: 28px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.right-icon{
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.btn-explore{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #1e56a0;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-explore:hover{
+  background-color: #163172;
+  transform: translateY(-2px);
+}
+
+.hero-content-image2{
+  flex: 1 1 50%;
+}
+
+.hero-content-image2 img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* ===== OUR PROCESS ===== */
+
+.process-section{
+  background-color: #07112b;
+  color: white;
+}
+
+.process-container{
+  display: flex;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 100px 88px;
+  font-family: "Manrope", sans-serif;
+}
+
+.process-container2{
+
+  padding-right: 100px;
+}
+
+.process-eyebrow{
+  display: block;
+  color: white;
+  font-size: 21px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.process-heading{
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 24px;
+}
+
+.process-lead{
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-bottom: 56px;
+  font-family: "Manrope", sans-serif;
+}
+
+.process-steps{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.process-step{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.process-icon{
+  width: 74px;
+  height: 71px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.process-icon svg{
+  width: 32px;
+  height: 32px;
+}
+
+.process-step-number{
+  font-size: 21px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.process-step-title{
+  font-size: 21px;
+  font-weight: 600;
+  display: block;
+}
+
+.process-step-desc{
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.57;
+  max-width: 220px;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Manrope", sans-serif;
+}
+
+.btn-outline-dark{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  font-family: "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-outline-dark:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px){
+  .process-steps{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 24px;
+  }
+}
+
+@media (max-width: 768px){
+  .process-steps{
+    grid-template-columns: 1fr;
+  }
+}

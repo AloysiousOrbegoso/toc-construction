@@ -5,7 +5,8 @@
   "description": "TOC Construction marketing page — About, Projects, Careers, CTA, Testimonials, Footer.",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
     "vite": "^5.2.0",

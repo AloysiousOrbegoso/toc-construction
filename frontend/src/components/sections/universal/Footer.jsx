@@ -1,4 +1,4 @@
-import { footerContent } from "../data/content";
+import { footerContent } from "../../../data/content";
 import {
   BrandMarkIcon,
   FacebookIcon,
@@ -8,8 +8,8 @@ import {
   PhoneIcon,
   MailIcon,
   PinIcon,
-} from "./ui/icons";
-import "./Footer.css";
+} from "../../ui/icons";
+import "../styling/Footer.css";
 
 const SOCIAL_LINKS = [
   { label: "Facebook", Icon: FacebookIcon },
