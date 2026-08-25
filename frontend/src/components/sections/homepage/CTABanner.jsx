@@ -1,6 +1,6 @@
-import Button from "./ui/Button";
-import { ctaContent } from "../data/content";
-import "./CTABanner.css";
+import Button from "../../ui/Button";
+import { ctaContent } from "../../../data/content";
+import "../styling/CTABanner.css";
 
 const TICK_COUNT = 8;
 

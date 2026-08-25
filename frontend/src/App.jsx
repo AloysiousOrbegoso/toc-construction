@@ -1,22 +1,20 @@
-import React from "react";
-import "./styles/tokens.css";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/sections/universal/Navbar";
+import Footer from "./components/sections/universal/Footer";
+import Home from "./components/pages/Home";
 
-import AboutStory from "./components/AboutStory";
-import FeaturedProjects from "./components/FeaturedProjects";
-import Careers from "./components/Careers";
-import CTABanner from "./components/CTABanner";
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
 
-export default function App() {
+function App() {
   return (
-    <div className="toc-root">
-      <AboutStory />
-      <FeaturedProjects />
-      <Careers />
-      <CTABanner />
-      <Testimonials />
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+    
+      </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
+
+export default App;
