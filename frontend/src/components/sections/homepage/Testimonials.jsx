@@ -1,5 +1,5 @@
 import { testimonials } from "../../../data/content";
-import "./Testimonials.css";
+import "../styling/Testimonials.css";
 
 export default function Testimonials() {
   return (
