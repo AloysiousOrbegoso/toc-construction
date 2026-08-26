@@ -2,6 +2,7 @@
   "name": "toc-construction-site",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "TOC Construction marketing page — About, Projects, Careers, CTA, Testimonials, Footer.",
   "dependencies": {
     "react": "^18.2.0",
@@ -10,7 +11,9 @@
   },
   "devDependencies": {
     "vite": "^5.2.0",
-    "@vitejs/plugin-react": "^4.2.0"
+    "@vitejs/plugin-react": "^4.2.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
   },
   "scripts": {
     "dev": "vite",

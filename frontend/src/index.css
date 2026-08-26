@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* Basic reset so every browser starts from the same blank slate */
 * {
   margin: 0;
