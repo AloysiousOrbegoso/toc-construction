@@ -40,7 +40,7 @@ export default function Projects() {
 					</p>
 				</div>
 
-				<div className="mt-8 grid auto-rows-[180px] gap-3 sm:auto-rows-[220px] md:aspect-[2.3/1] md:grid-cols-4 md:grid-rows-[1fr_1.15fr] md:auto-rows-auto">
+				<div className="mt-8 grid auto-rows-45 gap-3 sm:auto-rows-55 md:aspect-[2.3/1] md:grid-cols-4 md:grid-rows-[1fr_1.15fr] md:auto-rows-auto">
 					{projects.map((project) => (
 						<div
 							className={`group overflow-hidden rounded-md ${project.className ?? ""}`}
