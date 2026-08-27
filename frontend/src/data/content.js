@@ -66,3 +66,97 @@ export const testimonials = [
     avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
 ];
+
+export const projectsPageContent = {
+  hero: {
+    eyebrow: "Our Work",
+    title: "Building the Best Outcomes",
+    subtitle: "For All Project Stakeholders",
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop",
+  },
+  categories: ["All", "Furnitures", "Infrastructure", "Homes"],
+    projects: [
+    {
+      id: "colorado-housing",
+      image:
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop",
+      category: "Furnitures",
+      title: "Colorado Housing Departments",
+      location: "Denver, CO",
+    },
+    {
+      id: "ny-buildings",
+      image:
+        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop",
+      category: "Infrastructure",
+      title: "New York Buildings",
+      location: "New York City",
+    },
+    {
+      id: "california-homes",
+      image:
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop",
+      category: "Homes",
+      title: "California Homes",
+      location: "Cal, USA",
+    },
+    {
+      id: "colorado-housing-2",
+      image:
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
+      category: "Furnitures",
+      title: "Colorado Housing Departments",
+      location: "Denver, CO",
+    },
+    {
+      id: "ny-buildings-2",
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop",
+      category: "Infrastructure",
+      title: "New York Buildings",
+      location: "New York City",
+    },
+    {
+      id: "california-homes-2",
+      image:
+        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop",
+      category: "Homes",
+      title: "California Homes",
+      location: "Cal, USA",
+    },
+    {
+      id: "texas-commercial",
+      image:
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
+      category: "Infrastructure",
+      title: "Texas Commercial Complex",
+      location: "Austin, TX",
+    },
+    {
+      id: "florida-residence",
+      image:
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format&fit=crop",
+      category: "Homes",
+      title: "Florida Luxury Residence",
+      location: "Miami, FL",
+    },
+    {
+      id: "seattle-interiors",
+      image:
+        "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
+      category: "Furnitures",
+      title: "Seattle Interior Fit-Out",
+      location: "Seattle, WA",
+    },
+  ],
+    cta: {
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop",
+    heading: "Let's Build\nTogether",
+    careersCta: "View Career Openings",
+    contactEyebrow: "Let's Talk",
+    contactHeading: "Need to Reach Us?",
+    contactCta: "Get Free Consultation",
+  },
+};

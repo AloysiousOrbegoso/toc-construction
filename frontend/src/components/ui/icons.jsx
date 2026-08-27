@@ -49,3 +49,9 @@ export const PinIcon = (props) => (
     <circle cx="12" cy="10" r="3" />
   </svg>
 );
+
+export const FilterIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+    <path d="M3 4h18M6 9h12M9 14h6M11 19h2" strokeLinecap="round" />
+  </svg>
+);
