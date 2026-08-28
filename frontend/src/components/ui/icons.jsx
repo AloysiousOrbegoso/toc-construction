@@ -55,3 +55,34 @@ export const FilterIcon = (props) => (
     <path d="M3 4h18M6 9h12M9 14h6M11 19h2" strokeLinecap="round" />
   </svg>
 );
+
+export const ChevronLeftIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+    <path d="m15 5-7 7 7 7" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const ChevronRightIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+    <path d="m9 5 7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const ArrowUpRightIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+    <path d="M7 17 17 7M8 7h9v9" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const DownloadIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+    <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const CalendarIcon = (props) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
+    <rect x="3" y="5" width="18" height="16" rx="2" />
+    <path d="M3 10h18M8 3v4M16 3v4" strokeLinecap="round" />
+  </svg>
+);

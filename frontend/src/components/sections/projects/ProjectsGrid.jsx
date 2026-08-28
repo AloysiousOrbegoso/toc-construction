@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { projectsPageContent } from "../../../data/content";
 import { FilterIcon } from "../../ui/icons";
 
@@ -29,7 +30,11 @@ export default function ProjectsGrid() {
 
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {visibleProjects.map((project) => (
-            <article key={project.id} className="group cursor-pointer">
+            <Link
+              to={`/projects/${project.id}`}
+              key={project.id}
+              className="group block"
+            >
               <div className="overflow-hidden rounded-lg">
                 <img
                   src={project.image}
@@ -48,7 +53,7 @@ export default function ProjectsGrid() {
                   {project.location}
                 </p>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
