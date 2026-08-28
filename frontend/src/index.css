@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme{
   --color-navy-950: #0a1930;
   --color-navy-900: #0e2140;
   --color-navy-800: #152a4d;
