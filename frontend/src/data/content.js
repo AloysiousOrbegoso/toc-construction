@@ -159,4 +159,24 @@ export const projectsPageContent = {
     contactHeading: "Need to Reach Us?",
     contactCta: "Get Free Consultation",
   },
+  
 };
+export const careerJobs = [
+  {
+    id: "senior-engineer",
+    title: "Senior Engineer",
+    employmentType: "Full-Time",
+    salary: "$80,000 - $120,000 / Year",
+    location: "Metro Manila, PH",
+    description:
+      "We are seeking a highly skilled Senior Engineer to lead our structural design team. You will be responsible for overseeing complex construction projects from conception to completion, ensuring all engineering standards and safety protocols are met while maintaining high-quality output and efficiency.",
+    responsibilities: [
+      "Lead and mentor a team of junior engineers and draftsmen.",
+      "Review and approve structural designs, calculations, and technical specifications.",
+      "Coordinate with architects, contractors, and clients to ensure project alignment.",
+      "Conduct site inspections and provide technical solutions for on-site challenges.",
+      "Ensure compliance with local building codes and international safety standards.",
+    ],
+    applyHref: "#application-form",
+  },
+];

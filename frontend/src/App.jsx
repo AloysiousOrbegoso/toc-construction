@@ -4,7 +4,8 @@ import Footer from "./components/sections/universal/Footer";
 import Home from "./components/pages/Home";
 import ProjectsPage from "./components/pages/ProjectsPage";
 import About from "./components/pages/About";
-
+import ExploreServices from "./components/pages/Explore_Services";
+import Careers from "./components/pages/Careers";
 
 function App() {
   return (

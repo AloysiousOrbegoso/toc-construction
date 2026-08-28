@@ -1,4 +1,4 @@
-import constructionImage from "../../assets/services_page/3rd_section_imag.png";
+import constructionImage from "../../../assets/services_page/3rd_section_imag.png";
 
 export default function ThirdSection() {
 	return (
