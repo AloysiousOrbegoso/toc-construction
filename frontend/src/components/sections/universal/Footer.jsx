@@ -48,9 +48,7 @@ export default function Footer() {
         <div className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,200px),1fr))] gap-[clamp(2rem,1.6rem+2vw,3.5rem)] pb-[clamp(2rem,1.7rem+1.5vw,3rem)] border-b border-line-on-dark">
           <div className="col-span-1 min-w-0 max-w-[320px]">
             <div className="flex items-center gap-[clamp(0.6rem,0.5rem+0.4vw,0.85rem)] mb-[clamp(1rem,0.85rem+0.6vw,1.5rem)]">
-              <div className="w-[clamp(36px,2.6vw+24px,46px)] h-[clamp(36px,2.6vw+24px,46px)] rounded-[0.55rem] bg-[linear-gradient(135deg,var(--color-blue-500),#1c3fa8)] flex items-center justify-center shrink-0 [&>svg]:w-[58%] [&>svg]:h-[58%]">
-                <BrandMarkIcon />
-              </div>
+              <BrandMarkIcon className="w-[clamp(36px,2.6vw+24px,46px)] h-[clamp(36px,2.6vw+24px,46px)] shrink-0" />
               <div>
                 <p className="font-extrabold text-[clamp(1.1rem,1rem+0.5vw,1.4rem)] leading-[1.1]">
                   {brandName}
