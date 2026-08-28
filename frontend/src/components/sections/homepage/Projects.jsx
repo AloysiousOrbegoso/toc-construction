@@ -1,7 +1,7 @@
 import projectOne from "../../../assets/homepage/Projects_1.png";
 import projectTwo from "../../../assets/homepage/Projects_2.png";
 import projectThree from "../../../assets/homepage/Projects_3.png";
-
+import projectFour from "../../../assets/homepage/Projects_4.png";
 
 const projects = [
 	{

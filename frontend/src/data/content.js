@@ -161,7 +161,7 @@ export const projectsPageContent = {
   },
   
 };
-export const careerJobs = [
+export const careerjobs = [
   {
     id: "senior-engineer",
     title: "Senior Engineer",
