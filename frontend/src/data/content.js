@@ -160,7 +160,6 @@ export const projectsPageContent = {
     contactCta: "Get Free Consultation",
   },
 };
-
   
 export const careerJobs = [
   {
