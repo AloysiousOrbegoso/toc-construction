@@ -159,8 +159,8 @@ export const projectsPageContent = {
     contactHeading: "Need to Reach Us?",
     contactCta: "Get Free Consultation",
   },
-  
 };
+  
 export const careerJobs = [
   {
     id: "senior-engineer",
