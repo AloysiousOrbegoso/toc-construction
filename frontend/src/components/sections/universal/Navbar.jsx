@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import logo from "../../../assets/Logo.png";
+import logo from "../../../assets/Logo.svg";
 import contactUsArrow from "../../../assets/homepage/contact_us_arrow.svg";
 
 // This is the navigation bar at the top of the site.

@@ -1,7 +1,7 @@
-export const BrandMarkIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M4 20V10L12 4L20 10V20H14V14H10V20H4Z" fill="white" />
-  </svg>
+import logoOnly from "../../assets/Logo_only.svg";
+
+export const BrandMarkIcon = ({ className, ...props }) => (
+  <img src={logoOnly} alt="TOC Construction logo" className={className} {...props} />
 );
 
 export const FacebookIcon = (props) => (
