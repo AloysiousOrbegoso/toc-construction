@@ -1,7 +1,7 @@
-import designIcon from "../../assets/services_page/design_icon.png";
-import projectIcon from "../../assets/services_page/project_icon.png";
-import renovationIcon from "../../assets/services_page/renovation_icon.png";
-import contractingIcon from "../../assets/services_page/contracting_icon.png";
+import designIcon from "../../../assets/services_page/design_icon.png";
+import projectIcon from "../../../assets/services_page/project_icon.png";
+import renovationIcon from "../../../assets/services_page/renovation_icon.png";
+import contractingIcon from "../../../assets/services_page/contracting_icon.png";
 
 const services = [
 	{

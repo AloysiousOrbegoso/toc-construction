@@ -1,4 +1,4 @@
-import heroImage from "../../assets/services_page/heropage.png";
+import heroImage from "../../../assets/services_page/heropage.png";
 
 export default function HeroPage() {
 	return (
