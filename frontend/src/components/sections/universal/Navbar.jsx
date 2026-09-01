@@ -88,7 +88,7 @@ function Navbar() {
 
         {/* Button on the right */}
         <Link
-          to="/contact"
+          to="/get-quote"
           className="font-display shrink-0 flex items-center justify-end gap-2 bg-[#163172] text-white py-[clamp(0.24rem,1vw,0.3rem)] px-[clamp(0.6rem,2vw,.7rem)] rounded-full text-[18px] font-extralight whitespace-normal hover:bg-[#1e56a0]"
         >
           <span className="ml-2">Contact Us</span>

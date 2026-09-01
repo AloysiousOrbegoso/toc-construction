@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Concrete from "../../../assets/ConcreteBatchingPlant.png";
 import Provinces from "../../../assets/Provines.png";
 import Equipment from "../../../assets/Equipments.png";
-import rightArrow from "../../../assets/homepage/rightArrow.svg";
+import WipeButton from "../../ui/WipeButton";
 import slide1 from "../../../assets/homepage/slide1.avif";
 import slide2 from "../../../assets/homepage/Projects_1.png";
 import slide3 from "../../../assets/homepage/Projects_2.png";
@@ -12,8 +12,8 @@ import slide4 from "../../../assets/homepage/Projects_3.png";
 // the curved edge is applied in CSS below, not baked into any image file.
 const SLIDES = [slide1, slide2, slide3, slide4];
 
-const SLIDE_HOLD_MS = 1000; // how long each slide stays fully visible
-const TRANSITION_MS = 600; // crossfade duration between slides
+const SLIDE_HOLD_MS = 3000; // how long each slide stays fully visible
+const TRANSITION_MS = 500; // crossfade duration between slides
 
 export default function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,9 +26,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="bg-[#07112B] text-white overflow-hidden">
-      <div className="max-w-360 mx-auto flex flex-wrap items-start min-h-[calc(100dvh-72px)] md:min-h-[calc(100dvh-81px)] relative">
-        <div className="flex-[1_1_320px] max-w-200 pt-[clamp(2.5rem,2rem+4vw,7.5rem)] pr-6 md:pr-12 lg:pr-22 pb-[clamp(2rem,1.5rem+3vw,3.75rem)] pl-6 md:pl-12 lg:pl-22 relative z-2">
+    <section className="relative bg-[#07112B] text-white overflow-hidden min-h-[calc(100dvh-72px)] md:min-h-[calc(100dvh-81px)]">
+      <div className="max-w-360 mx-auto flex flex-wrap items-start min-h-[calc(100dvh-72px)] md:min-h-[calc(100dvh-81px)] relative z-10 pointer-events-none">
+        <div className="pointer-events-auto flex-[1_1_320px] max-w-200 pt-[clamp(2.5rem,2rem+4vw,7.5rem)] pr-6 md:pr-12 lg:pr-22 pb-[clamp(2rem,1.5rem+3vw,3.75rem)] pl-6 md:pl-12 lg:pl-22 relative z-2">
           <h1 className="font-body text-[clamp(2.25rem,1.5rem+5vw,5rem)] font-bold leading-[0.99] tracking-[clamp(0.05rem,0.15vw,0.2325rem)] mb-[clamp(1.25rem,1rem+1.5vw,2rem)]">
             We Build
             <br />
@@ -44,26 +44,10 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-wrap gap-16 mb-[clamp(2rem,1.5rem+3vw,5rem)]">
-            <button className="inline-flex items-center justify-center gap-2.5 font-display text-[22px] font-medium rounded-lg cursor-pointer py-[clamp(0.75rem,0.65rem+0.5vw,.8rem)] px-[clamp(.75rem,1rem+1.5vw,1rem)] whitespace-nowrap transition-[transform,background-color] duration-200 ease-in-out bg-[#1e56a0] text-white border-0 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 hover:bg-[#163172]">
-              <span className="m-1 flex items-center justify-center)">Get a Quote</span>
-              <span className="-m-1 flex items-center justify-center)">
-              <img
-                src={rightArrow}
-                alt=""
-                className="-m-1 w-8 h-8 object-contain"
-              />
-              </span> 
-            </button>
-            <button className="inline-flex items-center justify-center gap-2.5 font-display text-[22px] font-medium rounded-lg cursor-pointer py-[clamp(0.75rem,0.65rem+0.5vw,.8rem)] px-[clamp(.75rem,1rem+1.5vw,1rem)] whitespace-nowrap transition-[transform,background-color] duration-200 ease-in-out bg-transparent text-white border border-white shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:-translate-y-0.5 hover:bg-white/10">
-              <span className="m-1 flex items-center justify-center)">View Projects</span>
-              <span className="-m-1 flex items-center justify-center)">
-              <img
-                src={rightArrow}
-                alt=""
-                className="-m-1 w-8 h-8 object-contain"
-              />
-              </span>
-            </button>
+            <WipeButton className="text-xl">Get a Quote</WipeButton>
+            <WipeButton variant="outline" className="text-xl">
+              View Projects
+            </WipeButton>
           </div>
 
           <div className="flex flex-wrap gap-[clamp(1.5rem,1rem+3vw,4rem)]">
@@ -116,10 +100,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Image carousel — curved edge is applied via CSS clip-path below,
-            not baked into the photos, so any image can be dropped into SLIDES */}
-        <div className="absolute top-0 right-0 bottom-0 w-[min(1690px,100%)] z-1">
+      {/* Image carousel — curved edge is applied via CSS clip-path below,
+          not baked into the photos, so any image can be dropped into SLIDES.
+          Sits at section level (not inside the centered container) so it
+          reaches the viewport's right edge on wide screens. */}
+      <div className="absolute top-0 right-0 bottom-0 w-[min(1690px,100%)] z-0">
           <svg width="0" height="0" aria-hidden="true">
             <defs>
               {/* Approximation of the original curve. Coordinates are in a
@@ -128,8 +115,8 @@ export default function Hero() {
                   Tweak the two control points below if the curve needs to
                   bulge more/less or shift left/right. */}
               <clipPath id="heroCurveClip" clipPathUnits="objectBoundingBox">
-                <path d="M0.7,0 C0.2,0.1 0.3,0.58,.7,1 L1,1 L1,0 Z" />
-              </clipPath>
+                <path d="M0.67,0 C0.39,0.22 0.29,0.6 0.62,1 L1,1 L1,0 Z" />
+                  </clipPath>
             </defs>
           </svg>
 
@@ -164,7 +151,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }

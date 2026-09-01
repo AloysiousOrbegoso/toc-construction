@@ -1,4 +1,5 @@
 import aboutUsImage from "../../../assets/homepage/About_Us.svg";
+import WipeButton from "../../ui/WipeButton";
 
 export default function About_Us() {
     return (
@@ -23,12 +24,9 @@ export default function About_Us() {
                             Let&apos;s build something amazing together.
                         </p>
                     </div>
-                    <button
-                        type="button"
-                        className="mt-6 rounded-sm bg-[#1E56A0] px-5 py-3 text-2x1 font-medium text-white hover:scale-105"
-                    >
+                    <WipeButton icon={null} className="mt-6">
                         Learn More About Us
-                    </button>
+                    </WipeButton>
                 </div>
                 <div className="rounded-md">
                     <img

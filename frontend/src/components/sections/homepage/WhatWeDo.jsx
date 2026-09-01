@@ -1,5 +1,5 @@
 import checkIcon from "../../../assets/check.png";
-import Right from "../../../assets/Right.png";
+import WipeButton from "../../ui/WipeButton";
 import photoWide from "../../../assets/homepage/WhatwedoImage2.svg";
 import photoTall from "../../../assets/homepage/WhatwedoImage3.svg";
 import photoBottom from "../../../assets/homepage/WhatwedoImage1.svg";
@@ -57,14 +57,7 @@ export default function WhatWeDo() {
             </div>
           </div>
 
-          <button className="inline-flex items-center justify-center gap-2.5 bg-[#1e56a0] text-white font-display text-[clamp(0.95rem,0.85rem+0.5vw,1.125rem)] font-bold border-0 rounded-lg py-[clamp(0.75rem,0.65rem+0.5vw,1rem)] px-[clamp(1.25rem,1rem+1.5vw,.75rem)] whitespace-nowrap cursor-pointer shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] transition-[transform,background-color] duration-200 ease-in-out hover:bg-[#163172] hover:-translate-y-0.5">
-            Explore All Services
-            <img
-              src={Right}
-              alt="ExploreAllServices"
-              className="w-8 h-8 block shrink-0 object-contain"
-            />
-          </button>
+          <WipeButton>Explore All Services</WipeButton>
         </div>
 
         <div className="-m-6 flex-[1_1_500px] max-w-250">

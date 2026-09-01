@@ -1,3 +1,4 @@
+import WipeButton from "../../ui/WipeButton";
 import projectOne from "../../../assets/homepage/Projects_1.png";
 import projectTwo from "../../../assets/homepage/Projects_2.png";
 import projectThree from "../../../assets/homepage/Projects_3.png";
@@ -29,7 +30,7 @@ export default function Projects() {
 		<section className="bg-[#07112B] px-6 py-16 font-sans text-white sm:px-10 lg:px-16 lg:py-20">
 			<div className="mx-auto w-full max-w-6xl">
 				<div className="text-center">
-					<p className="mb-5 text-[11px] font-medium uppercase tracking-[0.02em]">
+					<p className="mb-5 text-[20px] font-medium uppercase tracking-[0.02em]">
 						Featured Projects
 					</p>
 					<h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -56,12 +57,9 @@ export default function Projects() {
 				</div>
 
 				<div className="mt-8 text-center">
-					<button
-						type="button"
-						className="rounded-md border border-white px-4 py-2.5 text-xs font-medium transition-transform duration-200 hover:scale-105"
-					>
+					<WipeButton variant="outline" icon={null}>
 						Explore More Projects
-					</button>
+					</WipeButton>
 				</div>
 			</div>
 		</section>

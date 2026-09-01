@@ -7,6 +7,7 @@ import ProjectDetailPage from "./components/pages/ProjectDetailPage";
 import About from "./components/pages/About";
 import ExploreServices from "./components/pages/Explore_Services";
 import Careers from "./components/pages/Careers";
+import GetQuote from "./components/pages/GetQuote";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/services" element={<ExploreServices />} />
         <Route path="/about" element={<About />} /> 
         <Route path="/careers" element={<Careers />} />
+        <Route path="/get-quote" element={<GetQuote />} />     
       </Routes>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-import Button from "../../ui/Button";
+import WipeButton from "../../ui/WipeButton";
 import { ctaContent } from "../../../data/content";
 
 const TICK_COUNT = 8;
@@ -33,7 +33,7 @@ export default function CTABanner() {
           <p className="text-[clamp(0.95rem,0.9rem+0.2vw,1.05rem)] leading-[1.7] mb-8 text-muted-on-dark">
             {body}
           </p>
-          <Button>{cta}</Button>
+          <WipeButton icon={null}>{cta}</WipeButton>
         </div>
       </div>
     </section>

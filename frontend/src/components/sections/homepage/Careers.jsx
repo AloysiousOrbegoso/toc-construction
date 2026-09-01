@@ -1,5 +1,5 @@
 import careersimage from "../../../assets/homepage/Careers.avif";
-import arrow from "../../../assets/homepage/arrow.png";
+import WipeButton from "../../ui/WipeButton";
 const roles = [
         "Senior Engineer",
         "Junior Engineer",
@@ -27,10 +27,7 @@ export default function Careers()
                                     <h3 className="mt-1 text-xl font-semibold leading-none sm:text-2xl">{role}</h3>
                                     <p className="mt-1 text-[16px] text-neutral-500">Full Time - 500,000 - Manila</p>   
                                     </div>
-                                    <button type="button" className="flex w-fit items-center justify-between gap-4 rounded-md bg-[#1E56A0] px-4 py-3 text-xs font-medium text-white transition-transform duration-200 hover:scale-105">
-                                        Submit Your Application
-                                        <img src ={arrow} alt ="" aria-hidden="true" className="h-4 w-4"/>
-                                    </button>
+                                    <WipeButton>Submit Your Application</WipeButton>
                                 </div>
                             ))}
                         </div>
