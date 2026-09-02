@@ -102,55 +102,81 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Image carousel — curved edge is applied via CSS clip-path below,
-          not baked into the photos, so any image can be dropped into SLIDES.
-          Sits at section level (not inside the centered container) so it
-          reaches the viewport's right edge on wide screens. */}
-      <div className="absolute top-0 right-0 bottom-0 w-[min(1690px,100%)] z-0">
-          <svg width="0" height="0" aria-hidden="true">
-            <defs>
-              {/* Approximation of the original curve. Coordinates are in a
-                  0–1 box relative to the image container (objectBoundingBox),
-                  so it scales with the container automatically.
-                  Tweak the two control points below if the curve needs to
-                  bulge more/less or shift left/right. */}
-              <clipPath id="heroCurveClip" clipPathUnits="objectBoundingBox">
-                <path d="M0.67,0 C0.39,0.22 0.29,0.6 0.62,1 L1,1 L1,0 Z" />
-                  </clipPath>
-            </defs>
-          </svg>
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[#07112B]">
+        {SLIDES.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            style={{ transitionDuration: `${TRANSITION_MS}ms` }}
+            className={`absolute inset-0 h-full w-full object-cover ease-in-out ${
+              index === activeIndex
+                ? "opacity-100 transition-opacity"
+                : "opacity-0 transition-opacity"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,43,0.96)_0%,rgba(7,17,43,0.78)_38%,rgba(7,17,43,0.32)_100%)]" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#07112B]/80 via-transparent to-[#07112B]/20" />
 
-          <div className="relative w-full h-full [clip-path:url(#heroCurveClip)]">
-            {SLIDES.map((src, i) => (
-              <img
-                key={src}
-                src={src}
-                alt=""
-                style={{ transitionDuration: `${TRANSITION_MS}ms` }}
-                className={`absolute inset-0 w-full h-full object-cover ease-in-out ${
-                  i === activeIndex
-                    ? "opacity-100 transition-opacity"
-                    : "opacity-0 transition-opacity"
-                }`}
-              />
-            ))}
+        <div className="pointer-events-auto absolute bottom-6 right-6 left-6 z-10 ml-auto max-w-xl sm:bottom-10 sm:right-10 sm:left-auto">
+
+          <div className="flex items-center justify-end gap-3">
+            <button
+              type="button"
+              aria-label="Previous slide"
+              onClick={() => setActiveIndex((index) => (index - 1 + SLIDES.length) % SLIDES.length)}
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/25 bg-black/20 text-lg leading-none text-white/75 transition-colors hover:bg-white/15 hover:text-white"
+            >
+              &lt;
+            </button>
+
+            <div className="flex min-w-0 items-center gap-3 overflow-hidden">
+              {[-1, 0, 1].map((offset) => {
+                const index = (activeIndex + offset + SLIDES.length) % SLIDES.length;
+                const isActive = offset === 0;
+
+                return (
+                  <button
+                    key={`${index}-${offset}`}
+                    type="button"
+                    aria-label={`Go to slide ${index + 1}`}
+                    onClick={() => setActiveIndex(index)}
+                    className={`relative h-16 shrink-0 overflow-hidden rounded-[3px] border-0 p-0 transition-all duration-500 ease-in-out sm:h-20 ${
+                      isActive ? "w-28 opacity-100 sm:w-36" : "w-20 opacity-70 hover:opacity-100 sm:w-24"
+                    }`}
+                  >
+                    <img src={SLIDES[index]} alt="" className="h-full w-full object-cover" />
+                  </button>
+                );
+              })}
+            </div>
+
+            <button
+              type="button"
+              aria-label="Next slide"
+              onClick={() => setActiveIndex((index) => (index + 1) % SLIDES.length)}
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/25 bg-black/20 text-lg leading-none text-white/75 transition-colors hover:bg-white/15 hover:text-white"
+            >
+              &gt;
+            </button>
           </div>
 
-          {/* Dot indicators */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-            {SLIDES.map((_, i) => (
+          <div className="mt-3 flex justify-center gap-2">
+            {SLIDES.map((_, index) => (
               <button
-                key={i}
+                key={index}
                 type="button"
-                aria-label={`Go to slide ${i + 1}`}
-                onClick={() => setActiveIndex(i)}
-                className={`h-2.5 rounded-full border-0 cursor-pointer transition-all duration-300 ease-in-out ${
-                  i === activeIndex ? "w-6 bg-white" : "w-2.5 bg-white/40 hover:bg-white/60"
+                aria-label={`Go to slide ${index + 1}`}
+                onClick={() => setActiveIndex(index)}
+                className={`h-2 rounded-full border-0 cursor-pointer transition-all duration-300 ease-in-out ${
+                  index === activeIndex ? "w-6 bg-white" : "w-2 bg-white/40 hover:bg-white/60"
                 }`}
               />
             ))}
           </div>
         </div>
+      </div>
     </section>
   );
 }
