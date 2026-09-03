@@ -38,20 +38,8 @@ export default function Header() {
 					</p>
 				</div>
 
-				<form role="search" className="flex w-full flex-col gap-2 overflow-hidden rounded-xl bg-white p-2 sm:h-[70px] sm:flex-row sm:items-center sm:gap-0 sm:p-0 lg:max-w-[980px]">
-					<div className="flex min-w-0 flex-1 items-center px-4 sm:px-7">
-						<img src={searchIcon} alt="" className="mr-3 h-6 w-6 shrink-0 object-contain opacity-30" />
-						<label htmlFor="career-search" className="sr-only">
-							Search careers
-						</label>
-						<input
-							id="career-search"
-							type="search"
-							placeholder="Job title or keyword"
-							className="min-w-0 w-full bg-transparent py-2 font-display text-sm text-[#202020] outline-none placeholder:text-[#777b84] sm:text-base"
-						/>
-					</div>
-					<div className="flex min-w-0 flex-1 items-center px-4 sm:flex-[0_0_34%] sm:border-l sm:border-[#e5e5e5] sm:px-7">
+				<form role="search" className="grid w-full grid-cols-2 gap-2 overflow-hidden rounded-xl bg-white p-2 lg:flex lg:h-[70px] lg:items-center lg:gap-0 lg:p-0 lg:max-w-[980px]">
+					<div className="order-1 flex min-w-0 items-center px-4 lg:flex-1 lg:px-7">
 						<img src={locationIcon} alt="" className="mr-3 h-6 w-6 shrink-0 object-contain opacity-30" />
 						<label htmlFor="career-location" className="sr-only">
 							Location
@@ -60,13 +48,25 @@ export default function Header() {
 							id="career-location"
 							type="text"
 							placeholder="Location"
-							className="min-w-0 w-full bg-transparent py-2 font-display text-sm text-[#202020] outline-none placeholder:text-[#777b84] sm:text-base"
+							className="min-w-0 w-full bg-transparent py-2 font-display text-sm text-[#202020] outline-none placeholder:text-[#777b84] lg:text-base"
+						/>
+					</div>
+					<div className="order-2 flex min-w-0 items-center px-4 lg:flex-1 lg:px-7">
+						<img src={searchIcon} alt="" className="mr-3 h-6 w-6 shrink-0 object-contain opacity-30" />
+						<label htmlFor="career-search" className="sr-only">
+							Search careers
+						</label>
+						<input
+							id="career-search"
+							type="search"
+							placeholder="Job title or keyword"
+							className="min-w-0 w-full bg-transparent py-2 font-display text-sm text-[#202020] outline-none placeholder:text-[#777b84] lg:text-base"
 						/>
 					</div>
 					<WipeButton
 						icon={null}
 						type="submit"
-						className="relative z-10 h-14 shrink-0 rounded-lg px-10 py-0 text-base sm:mr-1 sm:h-[66px] sm:w-[184px] sm:rounded-lg sm:px-4"
+						className="order-3 col-span-2 relative z-10 h-14 shrink-0 rounded-lg px-10 py-0 text-base lg:order-3 lg:col-span-1 lg:mr-1 lg:h-[66px] lg:w-[184px] lg:rounded-lg lg:px-4"
 					>
 						Search
 					</WipeButton>
