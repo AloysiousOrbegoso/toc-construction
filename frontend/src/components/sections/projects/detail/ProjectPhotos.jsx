@@ -44,7 +44,7 @@ export default function ProjectPhotos({ photos = [] }) {
             <img
               src={photos[activeIndex]}
               alt={`Project photo ${activeIndex + 1}`}
-              className="h-56 w-full object-cover sm:h-72"
+              className="aspect-4/3 w-full object-cover sm:aspect-auto sm:h-full"
             />
           </div>
 
