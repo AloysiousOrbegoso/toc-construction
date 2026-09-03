@@ -28,6 +28,7 @@ const outline = "border border-white bg-transparent text-white hover:text-black"
 export default function WipeButton({
   variant = "fill",
   icon = rightArrow,
+  as: Component = "button",
   children,
   className = "",
   ...props
