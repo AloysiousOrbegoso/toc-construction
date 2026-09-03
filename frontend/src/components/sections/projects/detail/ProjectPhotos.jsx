@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronRightIcon } from "../../../ui/icons";
+import {ChevronLeftIcon} from "../../../ui/icons";
 
 export default function ProjectPhotos({ photos = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -7,6 +8,9 @@ export default function ProjectPhotos({ photos = [] }) {
   if (photos.length === 0) return null;
 
   const goNext = () => setActiveIndex((i) => (i + 1) % photos.length);
+
+  const goPrevious = () =>
+  setActiveIndex((i) => (i - 1 + photos.length) % photos.length); // This for left button 
 
   // Calculates the photo before the active photo
   const previousIndex =
@@ -53,13 +57,24 @@ export default function ProjectPhotos({ photos = [] }) {
             />
           </div>
 
+          {photos.length > 1 && (
+            <button
+              type="button"
+              onClick={goPrevious}
+              aria-label="Previous photo"
+              className="absolute left-0 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform hover:scale-105 sm:left-4 lg:-left-6"
+            >
+              <ChevronLeftIcon className="h-5 w-5" />
+            </button>
+          )}
+
           {/* NEXT BUTTON */}
           {photos.length > 1 && (
             <button
               type="button"
               onClick={goNext}
               aria-label="Next photo"
-              className="absolute right-0 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-500 text-white shadow-[0_4px_16px_rgba(47,95,224,0.35)] transition-transform hover:scale-105 sm:right-4 lg:-right-6"
+              className="absolute right-0 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform hover:scale-105 sm:right-4 lg:-right-6"
             >
               <ChevronRightIcon className="h-5 w-5" />
             </button>
