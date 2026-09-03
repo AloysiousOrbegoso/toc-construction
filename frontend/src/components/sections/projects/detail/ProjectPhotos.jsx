@@ -57,12 +57,13 @@ export default function ProjectPhotos({ photos = [] }) {
             />
           </div>
 
+          {/* NEXT PREVIOUSE */}
           {photos.length > 1 && (
             <button
               type="button"
               onClick={goPrevious}
               aria-label="Previous photo"
-              className="absolute left-0 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform hover:scale-105 sm:left-4 lg:-left-6"
+              className="absolute left-0 flex h-11 w-11 items-center justify-center rounded-full bg-blue-500 text-white transition-transform hover:scale-105 sm:left-4 lg:-left-6"
             >
               <ChevronLeftIcon className="h-5 w-5" />
             </button>
@@ -74,7 +75,7 @@ export default function ProjectPhotos({ photos = [] }) {
               type="button"
               onClick={goNext}
               aria-label="Next photo"
-              className="absolute right-0 flex h-11 w-11 items-center justify-center rounded-full bg-neutral-950 text-white transition-transform hover:scale-105 sm:right-4 lg:-right-6"
+              className="absolute right-0 flex h-11 w-11 items-center justify-center rounded-full bg-blue-500 text-white transition-transform hover:scale-105 sm:right-4 lg:-right-6"
             >
               <ChevronRightIcon className="h-5 w-5" />
             </button>
