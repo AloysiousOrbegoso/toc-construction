@@ -14,11 +14,25 @@ export default function ProjectPhotos({ photos = [] }) {
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Photos</h2>
 
         <div className="relative mt-8 flex items-center justify-center">
-          <div className="w-full max-w-xl overflow-hidden rounded-lg bg-neutral-100 sm:aspect-4/3">
+          <div>
+            <img 
+              src={photos[0]}
+              alt="Project photo 1"
+              className="h-40 w-56 object-cover"
+            />
+          </div>
+          <div>
             <img
-              src={photos[activeIndex]}
-              alt={`Project photo ${activeIndex + 1}`}
-              className="aspect-4/3 w-full object-cover sm:aspect-auto sm:h-full"
+              src={photos[1]}
+              alt="Project photo 2"
+              className="h-56 w-80 object-cover"
+            />
+          </div>
+          <div>
+            <img
+              src={photos[2]}
+              alt="Project photo 3"
+              className="h-40 w-56 object-cover"
             />
           </div>
 
