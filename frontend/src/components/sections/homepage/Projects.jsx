@@ -27,16 +27,16 @@ const projects = [
 
 export default function Projects() {
 	return (
-		<section className="bg-[#07112B] px-6 py-16 font-sans text-white sm:px-10 lg:px-16 lg:py-20">
+		<section className="bg-[#07112B] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-20">
 			<div className="mx-auto w-full max-w-6xl">
 				<div className="text-center">
-					<p className="mb-5 text-[20px] font-medium uppercase tracking-[0.02em]">
+					<p className="mb-5 text-lead font-medium uppercase tracking-[0.02em]">
 						Featured Projects
 					</p>
-					<h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+					<h2 className="text-h1 font-semibold tracking-tight">
 						Our Recent Projects
 					</h2>
-					<p className="mt-6 text-sm leading-[1.45] text-white/90 sm:text-base">
+					<p className="mt-6 text-lead leading-[1.45] text-white/90">
 						Explore some of our exceptional projects
 					</p>
 				</div>

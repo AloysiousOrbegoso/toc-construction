@@ -26,7 +26,7 @@ export const footerContent = {
     { label: "Privacy Policy", href: "#" },
     { label: "Terms of Service", href: "#" },
   ],
-  copyright: "© 2024 TOC Construction. All rights reserved.",
+  copyright: "© 2026 TOC Construction. All rights reserved.",
 };
 
 export const ctaContent = {

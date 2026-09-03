@@ -18,7 +18,7 @@ import rightArrow from "../../assets/homepage/rightArrow.svg";
 // classes every WipeButton shares
 const base =
   "group relative inline-flex items-center justify-center gap-2 overflow-hidden " +
-  "rounded-lg px-7 py-4 font-display text-lg font-bold whitespace-nowrap cursor-pointer " +
+  "rounded-lg px-7 py-4 font-display text-lead font-bold whitespace-nowrap cursor-pointer " +
   "transition-colors duration-300 ease-out";
 
 // classes that depend on the variant

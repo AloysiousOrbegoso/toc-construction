@@ -13,15 +13,15 @@ export default function ProjectsGrid() {
   const hasMore = visibleCount < projects.length;
 
   return (
-    <section className="bg-white px-6 py-16 font-sans text-neutral-950 sm:px-10 lg:px-16 lg:py-20">
+    <section className="bg-white px-6 py-16 text-neutral-950 md:px-12 lg:px-22 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="font-body text-h1 font-semibold tracking-tight">
             All Projects
           </h2>
           <button
             type="button"
-            className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-neutral-600 transition-colors hover:text-neutral-950"
+            className="flex items-center gap-2 font-display text-caption font-medium uppercase tracking-wider text-neutral-600 transition-colors hover:text-neutral-950"
           >
             <span>Filters</span>
             <FilterIcon className="h-4 w-4" />
@@ -43,13 +43,13 @@ export default function ProjectsGrid() {
                 />
               </div>
               <div className="mt-3">
-                <p className="text-[10px] font-medium uppercase tracking-[0.08em] text-neutral-500">
+                <p className="font-display text-caption font-medium uppercase tracking-[0.08em] text-neutral-500">
                   {project.category}
                 </p>
-                <h3 className="mt-1 text-sm font-semibold leading-tight">
+                <h3 className="mt-1 font-display text-h3 font-semibold leading-tight">
                   {project.title}
                 </h3>
-                <p className="mt-0.5 text-xs text-neutral-500">
+                <p className="mt-0.5 font-display text-small text-neutral-500">
                   {project.location}
                 </p>
               </div>
@@ -63,7 +63,7 @@ export default function ProjectsGrid() {
             <button
               type="button"
               onClick={() => setVisibleCount((c) => c + INITIAL_COUNT)}
-              className="shrink-0 rounded-md border border-neutral-950 px-6 py-2.5 text-xs font-medium uppercase tracking-wider transition-transform duration-200 hover:scale-105"
+              className="shrink-0 rounded-md border border-neutral-950 px-6 py-2.5 font-display text-small font-medium uppercase tracking-wider transition-transform duration-200 hover:scale-105"
             >
               Load More
             </button>

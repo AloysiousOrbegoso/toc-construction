@@ -3,16 +3,16 @@ import WipeButton from "../../ui/WipeButton";
 
 export default function About_Us() {
     return (
-        <section className="bg-white px-6 py-16 font-sans sm:px-10 lg:px-16 lg:py-24">
+        <section className="bg-white px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
             <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
                 <div className="max-w-xl">
-                    <p className="mb-12 text-[22px] font-medium uppercase tracking-[0.02em] text-neutral-900">
+                    <p className="mb-12 text-lead font-medium uppercase tracking-[0.02em] text-neutral-900">
                         About Us
                     </p>
-                    <h1 className="mb-12 text-[42px] font-semibold tracking-tight text-neutral-950 sm:text-[42px]">
+                    <h2 className="mb-12 text-h1 font-semibold tracking-tight text-neutral-950">
                         Our Story
-                    </h1>
-                    <div className="mb-10 space-y-5 text-sm leading-[1.45] text-neutral-800 sm:text-base">
+                    </h2>
+                    <div className="mb-10 space-y-5 text-body leading-[1.45] text-neutral-800">
                         <p>
                             At TOC Construction, we create inspiring, functional spaces built to last.
                             Backed by years of industry experience, we deliver uncompromising quality,

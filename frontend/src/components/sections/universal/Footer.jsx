@@ -20,7 +20,7 @@ const SOCIAL_LINKS = [
 function LinkColumn({ title, links }) {
   return (
     <div>
-      <p className="font-bold text-[clamp(0.95rem,0.9rem+0.25vw,1.1rem)] mb-[clamp(1rem,0.9rem+0.5vw,1.4rem)]">
+      <p className="font-bold text-lead mb-[clamp(1rem,0.9rem+0.5vw,1.4rem)]">
         {title}
       </p>
       <div className="flex flex-col gap-[clamp(0.6rem,0.55rem+0.25vw,0.85rem)]">
@@ -28,7 +28,7 @@ function LinkColumn({ title, links }) {
           <a
             href={link.href}
             key={link.label}
-            className="w-fit text-[clamp(0.85rem,0.82rem+0.15vw,0.92rem)] text-muted-on-dark no-underline transition-colors duration-150 ease-in-out hover:text-white"
+            className="w-fit text-small text-muted-on-dark no-underline transition-colors duration-150 ease-in-out hover:text-white"
           >
             {link.label}
           </a>
@@ -50,15 +50,15 @@ export default function Footer() {
             <div className="flex items-center gap-[clamp(0.6rem,0.5rem+0.4vw,0.85rem)] mb-[clamp(1rem,0.85rem+0.6vw,1.5rem)]">
               <BrandMarkIcon className="w-[clamp(36px,2.6vw+24px,46px)] h-[clamp(36px,2.6vw+24px,46px)] shrink-0" />
               <div>
-                <p className="font-extrabold text-[clamp(1.1rem,1rem+0.5vw,1.4rem)] leading-[1.1]">
+                <p className="font-extrabold text-h3 leading-[1.1]">
                   {brandName}
                 </p>
-                <p className="text-[clamp(0.65rem,0.62rem+0.15vw,0.75rem)] tracking-[0.14em] text-blue-300 font-bold">
+                <p className="text-caption tracking-[0.14em] text-blue-300 font-bold">
                   {brandSub}
                 </p>
               </div>
             </div>
-            <p className="text-[clamp(0.85rem,0.82rem+0.15vw,0.95rem)] leading-[1.65] text-muted-on-dark mb-[clamp(1.25rem,1.1rem+0.7vw,1.75rem)]">
+            <p className="text-small leading-[1.65] text-muted-on-dark mb-[clamp(1.25rem,1.1rem+0.7vw,1.75rem)]">
               {description}
             </p>
             <div className="flex gap-[clamp(0.5rem,0.45rem+0.25vw,0.7rem)]">
@@ -79,19 +79,19 @@ export default function Footer() {
           <LinkColumn title="Services" links={services} />
 
           <div>
-            <p className="font-bold text-[clamp(0.95rem,0.9rem+0.25vw,1.1rem)] mb-[clamp(1rem,0.9rem+0.5vw,1.4rem)]">
+            <p className="font-bold text-lead mb-[clamp(1rem,0.9rem+0.5vw,1.4rem)]">
               Contact Info
             </p>
             <div className="flex flex-col gap-[clamp(0.85rem,0.75rem+0.4vw,1.15rem)]">
-              <div className="flex items-start gap-[clamp(0.6rem,0.55rem+0.25vw,0.8rem)] text-[clamp(0.85rem,0.82rem+0.15vw,0.92rem)] text-muted-on-dark [&>svg]:w-[clamp(15px,1vw+10px,18px)] [&>svg]:h-[clamp(15px,1vw+10px,18px)] [&>svg]:shrink-0 [&>svg]:mt-[0.15rem] [&>svg]:text-blue-300">
+              <div className="flex items-start gap-[clamp(0.6rem,0.55rem+0.25vw,0.8rem)] text-small text-muted-on-dark [&>svg]:w-[clamp(15px,1vw+10px,18px)] [&>svg]:h-[clamp(15px,1vw+10px,18px)] [&>svg]:shrink-0 [&>svg]:mt-[0.15rem] [&>svg]:text-blue-300">
                 <PhoneIcon />
                 <span>{contact.phone}</span>
               </div>
-              <div className="flex items-start gap-[clamp(0.6rem,0.55rem+0.25vw,0.8rem)] text-[clamp(0.85rem,0.82rem+0.15vw,0.92rem)] text-muted-on-dark [&>svg]:w-[clamp(15px,1vw+10px,18px)] [&>svg]:h-[clamp(15px,1vw+10px,18px)] [&>svg]:shrink-0 [&>svg]:mt-[0.15rem] [&>svg]:text-blue-300">
+              <div className="flex items-start gap-[clamp(0.6rem,0.55rem+0.25vw,0.8rem)] text-small text-muted-on-dark [&>svg]:w-[clamp(15px,1vw+10px,18px)] [&>svg]:h-[clamp(15px,1vw+10px,18px)] [&>svg]:shrink-0 [&>svg]:mt-[0.15rem] [&>svg]:text-blue-300">
                 <MailIcon />
                 <span>{contact.email}</span>
               </div>
-              <div className="flex items-start gap-[clamp(0.6rem,0.55rem+0.25vw,0.8rem)] text-[clamp(0.85rem,0.82rem+0.15vw,0.92rem)] text-muted-on-dark [&>svg]:w-[clamp(15px,1vw+10px,18px)] [&>svg]:h-[clamp(15px,1vw+10px,18px)] [&>svg]:shrink-0 [&>svg]:mt-[0.15rem] [&>svg]:text-blue-300">
+              <div className="flex items-start gap-[clamp(0.6rem,0.55rem+0.25vw,0.8rem)] text-small text-muted-on-dark [&>svg]:w-[clamp(15px,1vw+10px,18px)] [&>svg]:h-[clamp(15px,1vw+10px,18px)] [&>svg]:shrink-0 [&>svg]:mt-[0.15rem] [&>svg]:text-blue-300">
                 <PinIcon />
                 <span>{contact.address}</span>
               </div>
@@ -99,7 +99,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-between items-center gap-[clamp(0.75rem,0.6rem+0.6vw,1.25rem)] pt-[clamp(1.25rem,1.1rem+0.6vw,1.75rem)] text-[clamp(0.78rem,0.76rem+0.1vw,0.85rem)] text-muted-on-dark">
+        <div className="flex flex-wrap justify-between items-center gap-[clamp(0.75rem,0.6rem+0.6vw,1.25rem)] pt-[clamp(1.25rem,1.1rem+0.6vw,1.75rem)] text-caption text-muted-on-dark">
           <p>{copyright}</p>
           <div className="flex gap-[clamp(1rem,0.85rem+0.6vw,1.75rem)]">
             {legalLinks.map((link) => (

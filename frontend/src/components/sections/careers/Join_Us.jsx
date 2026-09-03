@@ -32,18 +32,18 @@ const benefits = [
 
 export default function Join_Us() {
   return (
-    <section className="bg-[#f5f5f5] px-4 py-14 sm:px-6 lg:px-8">
+    <section className="bg-[#f5f5f5] px-6 py-14 md:px-12 lg:px-22">
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-8 text-center">
-          <p className="text-center font-display text-[0.82rem] font-semibold uppercase tracking-[0.2em] text-[#202020]">
+          <p className="text-center font-display text-lead font-medium uppercase tracking-[0.067em] text-[#202020]">
             TOC CULTURE
           </p>
-          <h2 className="mt-2 font-display text-[clamp(2.1rem,3.5vw,3.1rem)] font-bold tracking-[-0.05em] text-[#111111]">
+          <h2 className="mt-4 font-body text-h1 font-semibold text-[#111111]">
             Why Join Us
           </h2>
         </div>
 
-        <p className="mx-auto mb-8 max-w-[980px] text-center font-display text-[1.05rem] leading-[1.7] text-[#4d5460] sm:text-lg">
+        <p className="mx-auto mb-8 max-w-[980px] text-center font-display text-lead text-[#4d5460]">
           We take care of our team, providing exceptional professional challenges, technical upskilling, and a family-first support system.
         </p>
 
@@ -57,11 +57,11 @@ export default function Join_Us() {
                 <img src={icon} alt={alt} className="h-[28px] w-[28px] object-contain brightness-0 invert" />
               </div>
 
-              <h3 className="mb-3 font-display text-[1.05rem] font-bold leading-tight text-[#111111] sm:text-[1.15rem]">
+              <h3 className="mb-3 font-display text-h3 font-bold leading-tight text-[#111111]">
                 {title}
               </h3>
 
-              <p className="font-display text-[0.9rem] leading-[1.65] text-[#5b6471] sm:text-[0.96rem]">
+              <p className="font-display text-body text-[#5b6471]">
                 {text}
               </p>
             </article>

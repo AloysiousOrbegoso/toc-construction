@@ -29,34 +29,34 @@ export default function AttachmentsSubmission({ onBack }) {
 
   return (
     <section className="bg-[#f6f6f6] pt-[61px] pb-24">
-      <div className="mx-auto w-full max-w-360 px-22">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22">
         <div className="mx-auto mb-14 max-w-[660px]">
           <ol className="relative flex items-start justify-between">
             <div className="absolute left-10 right-10 top-6 h-0.5 bg-[#e2e2e2]" />
 
-            <li className="relative z-10 flex flex-col items-center gap-4 bg-[#f6f6f6] px-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#112e81] text-[18px] font-bold text-white shadow-[0px_0px_0px_4px_#f9f9f9]">
+            <li className="relative z-10 flex flex-col items-center gap-3 bg-[#f6f6f6] px-2 sm:gap-4 sm:px-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#112e81] text-lead font-bold text-white shadow-[0px_0px_0px_4px_#f9f9f9]">
                 ✓
               </div>
-              <span className="whitespace-nowrap font-display text-[18px] font-semibold tracking-[0.08em] text-black">
+              <span className="text-center font-display text-small font-semibold tracking-[0.08em] text-black">
                 Your Details
               </span>
             </li>
 
-            <li className="relative z-10 flex flex-col items-center gap-4 bg-[#f6f6f6] px-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#112e81] text-[18px] font-bold text-white shadow-[0px_0px_0px_4px_#f9f9f9]">
+            <li className="relative z-10 flex flex-col items-center gap-3 bg-[#f6f6f6] px-2 sm:gap-4 sm:px-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#112e81] text-lead font-bold text-white shadow-[0px_0px_0px_4px_#f9f9f9]">
                 ✓
               </div>
-              <span className="whitespace-nowrap font-display text-[18px] font-semibold tracking-[0.08em] text-black">
+              <span className="text-center font-display text-small font-semibold tracking-[0.08em] text-black">
                 Project Information
               </span>
             </li>
 
-            <li className="relative z-10 flex flex-col items-center gap-4 bg-[#f6f6f6] px-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#112e81] text-[18px] font-bold text-white shadow-[0px_0px_0px_4px_#f9f9f9,0px_4px_6px_-1px_rgba(0,0,0,0.1)]">
+            <li className="relative z-10 flex flex-col items-center gap-3 bg-[#f6f6f6] px-2 sm:gap-4 sm:px-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#112e81] text-lead font-bold text-white shadow-[0px_0px_0px_4px_#f9f9f9,0px_4px_6px_-1px_rgba(0,0,0,0.1)]">
                 3
               </div>
-              <span className="whitespace-nowrap font-display text-[18px] font-semibold tracking-[0.08em] text-black">
+              <span className="text-center font-display text-small font-semibold tracking-[0.08em] text-black">
                 Attachments
               </span>
             </li>
@@ -65,21 +65,21 @@ export default function AttachmentsSubmission({ onBack }) {
 
         <div className="mx-auto max-w-[622px]">
           {submitted ? (
-            <div className="flex flex-col items-center gap-4 rounded-xl border border-[#e2e2e2] bg-white p-[49px] text-center shadow-[0px_8px_15px_0px_rgba(0,0,0,0.08)]">
-              <h2 className="font-body text-[40px] font-semibold text-[#1a1c1c]">
+            <div className="flex flex-col items-center gap-4 rounded-xl border border-[#e2e2e2] bg-white p-[clamp(1.25rem,1rem+3vw,3rem)] text-center shadow-[0px_8px_15px_0px_rgba(0,0,0,0.08)]">
+              <h2 className="font-body text-h1 font-semibold text-[#1a1c1c]">
                 Request Submitted
               </h2>
-              <p className="font-display text-[18px] text-[#444651]">
+              <p className="font-display text-lead text-[#444651]">
                 Thank you. Our team will review your request and get back to you shortly.
               </p>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-8 rounded-xl border border-[#e2e2e2] bg-white p-[49px] shadow-[0px_8px_15px_0px_rgba(0,0,0,0.08)]"
+              className="flex flex-col gap-8 rounded-xl border border-[#e2e2e2] bg-white p-[clamp(1.25rem,1rem+3vw,3rem)] shadow-[0px_8px_15px_0px_rgba(0,0,0,0.08)]"
             >
               <div className="border-b border-[#e2e2e2] pb-[25px]">
-                <h2 className="font-body text-[40px] font-semibold text-[#1a1c1c]">
+                <h2 className="font-body text-h1 font-semibold text-[#1a1c1c]">
                   Attachments &amp; Submission
                 </h2>
               </div>
@@ -111,13 +111,13 @@ export default function AttachmentsSubmission({ onBack }) {
                     <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
                     <path d="M12 12v9M8 17l4-4 4 4" />
                   </svg>
-                  <span className="font-display text-[18px] font-semibold text-[#1a1c1c]">
+                  <span className="font-display text-lead font-semibold text-[#1a1c1c]">
                     Drag and drop files here
                   </span>
-                  <span className="font-display text-[14px] text-[#444651]">
+                  <span className="font-display text-small text-[#444651]">
                     or click to browse your device
                   </span>
-                  <span className="mt-3 inline-flex items-center rounded-lg border border-[#c5c5d3] bg-white px-5 py-2 font-display text-[14px] font-semibold text-[#1a1c1c]">
+                  <span className="mt-3 inline-flex items-center rounded-lg border border-[#c5c5d3] bg-white px-5 py-2 font-display text-small font-semibold text-[#1a1c1c]">
                     Select Files
                   </span>
                   <input
@@ -129,7 +129,7 @@ export default function AttachmentsSubmission({ onBack }) {
                   />
                 </div>
 
-                <p className="font-display text-[13px] text-[#6b7280]">
+                <p className="font-display text-small text-[#6b7280]">
                   Upload project site photos, blueprints, or specifications (PDF, JPG,
                   PNG). Max 10MB per file.
                 </p>
@@ -139,7 +139,7 @@ export default function AttachmentsSubmission({ onBack }) {
                     {files.map((file, index) => (
                       <li
                         key={`${file.name}-${index}`}
-                        className="flex items-center justify-between rounded-lg border border-[#e2e2e2] bg-[#f9f9f9] px-4 py-2 font-display text-[14px] text-[#1a1c1c]"
+                        className="flex items-center justify-between rounded-lg border border-[#e2e2e2] bg-[#f9f9f9] px-4 py-2 font-display text-small text-[#1a1c1c]"
                       >
                         <span className="truncate">{file.name}</span>
                         <button
@@ -158,7 +158,7 @@ export default function AttachmentsSubmission({ onBack }) {
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor="notes"
-                  className="font-display text-[16px] font-semibold text-[#1a1c1c]"
+                  className="font-display text-body font-semibold text-[#1a1c1c]"
                 >
                   Additional Notes or Instructions
                 </label>
@@ -167,21 +167,21 @@ export default function AttachmentsSubmission({ onBack }) {
                   name="notes"
                   rows={5}
                   placeholder="Any final details we should know before reviewing your request?"
-                  className="w-full resize-y rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-[16px] text-[#1a1c1c] placeholder:text-[#6b7280]"
+                  className="w-full resize-y rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
               </div>
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-3">
                 <button
                   type="button"
                   onClick={onBack}
-                  className="rounded-xl border border-[#c5c5d3] bg-white px-6 py-4 font-display text-[16px] font-semibold text-[#1a1c1c] hover:bg-[#f6f6f6]"
+                  className="rounded-xl border border-[#c5c5d3] bg-white px-6 py-4 font-display text-body font-semibold text-[#1a1c1c] hover:bg-[#f6f6f6]"
                 >
                   Back to Step 2
                 </button>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#1e56a0] px-8 py-4 font-display text-[18px] font-bold text-white hover:bg-[#163172]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#1e56a0] px-8 py-4 font-display text-lead font-bold text-white hover:bg-[#163172]"
                 >
                   Submit Request
                   

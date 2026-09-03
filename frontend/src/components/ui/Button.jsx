@@ -4,7 +4,7 @@
  */
 const BASE_CLASSES =
   "inline-flex items-center gap-[clamp(0.4rem,0.35rem+0.3vw,0.6rem)] " +
-  "text-[clamp(0.85rem,0.83rem+0.1vw,0.95rem)] font-semibold whitespace-nowrap " +
+  "text-body font-semibold whitespace-nowrap " +
   "py-[clamp(0.65rem,0.6rem+0.3vw,0.85rem)] px-[clamp(1.25rem,1.1rem+1vw,1.75rem)] " +
   "rounded-lg border-0 cursor-pointer " +
   "transition-[transform,box-shadow,background-color,border-color] duration-[180ms] ease-in-out " +

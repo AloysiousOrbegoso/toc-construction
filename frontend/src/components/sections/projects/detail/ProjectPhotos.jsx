@@ -9,9 +9,9 @@ export default function ProjectPhotos({ photos = [] }) {
   const goNext = () => setActiveIndex((i) => (i + 1) % photos.length);
 
   return (
-    <section className="bg-white px-6 py-12 font-sans text-neutral-950 sm:px-10 lg:px-16 lg:py-16">
+    <section className="bg-white px-6 py-12 text-neutral-950 md:px-12 lg:px-22 lg:py-16">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Photos</h2>
+        <h2 className="font-body text-h1 font-semibold tracking-tight">Photos</h2>
 
         <div className="relative mt-8 flex items-center justify-center">
           <div className="w-full max-w-xl overflow-hidden rounded-lg bg-neutral-100 sm:aspect-4/3">

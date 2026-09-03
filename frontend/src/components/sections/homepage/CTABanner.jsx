@@ -24,13 +24,13 @@ export default function CTABanner() {
               <span key={i} className="w-0.5 bg-gold rounded-[1px] odd:h-full even:h-[55%]" />
             ))}
           </div>
-          <p className="text-[clamp(0.7rem,0.68rem+0.15vw,0.8rem)] tracking-[0.14em] font-bold uppercase mb-3 text-blue-300">
+          <p className="text-caption tracking-[0.14em] font-bold uppercase mb-3 text-blue-300">
             {eyebrow}
           </p>
-          <h2 className="text-[clamp(1.75rem,1.3rem+2vw,2.75rem)] leading-[1.12] font-extrabold tracking-[-0.01em] mb-5 text-white">
+          <h2 className="text-h1 leading-[1.12] font-extrabold tracking-[-0.01em] mb-5 text-white">
             {title}
           </h2>
-          <p className="text-[clamp(0.95rem,0.9rem+0.2vw,1.05rem)] leading-[1.7] mb-8 text-muted-on-dark">
+          <p className="text-lead leading-[1.7] mb-8 text-muted-on-dark">
             {body}
           </p>
           <WipeButton icon={null}>{cta}</WipeButton>
