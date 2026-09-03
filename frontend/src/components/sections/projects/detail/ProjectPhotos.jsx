@@ -35,7 +35,7 @@ export default function ProjectPhotos({ photos = [] }) {
             <img
               src={photos[previousIndex]}
               alt={`Project photo ${previousIndex + 1}`}
-              className="h-40 w-full object-cover"
+              className="h-40 w-full object-cover brightness-50 opacity-70"
             />
           </div>
 
@@ -53,7 +53,7 @@ export default function ProjectPhotos({ photos = [] }) {
             <img
               src={photos[nextIndex]}
               alt={`Project photo ${nextIndex + 1}`}
-              className="h-40 w-full object-cover"
+              className="h-40 w-full object-cover brightness-50 opacity-70"
             />
           </div>
 
