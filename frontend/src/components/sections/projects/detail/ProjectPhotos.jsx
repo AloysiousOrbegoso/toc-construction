@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { ChevronRightIcon } from "../../../ui/icons";
-import {ChevronLeftIcon} from "../../../ui/icons";
+import { ChevronRightIcon, ChevronLeftIcon } from "../../../ui/icons";
 
 export default function ProjectPhotos({ photos = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -57,7 +56,7 @@ export default function ProjectPhotos({ photos = [] }) {
             />
           </div>
 
-          {/* NEXT PREVIOUSE */}
+          {/* PREVIOUS BUTTON */}
           {photos.length > 1 && (
             <button
               type="button"
