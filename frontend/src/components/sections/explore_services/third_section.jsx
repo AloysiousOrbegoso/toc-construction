@@ -12,11 +12,13 @@ export default function ThirdSection() {
 						Our commitment to structural stability and technical proficiency ensures that every project is built to the highest standards. We employ advanced methodologies and rigorous quality control at every phase of development.
 					</p>
 				</div>
-				<img
-					src={constructionImage}
-					alt="Construction project under development"
-					className="w-full justify-self-end object-contain"
-				/>
+				<div className="group w-full overflow-hidden rounded-md">
+					<img
+						src={constructionImage}
+						alt="Construction project under development"
+						className="block w-full rounded-md object-contain transition-transform duration-300 ease-out group-hover:scale-155"
+					/>
+				</div>
 			</div>
 		</section>
 	);
