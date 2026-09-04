@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { CalendarIcon } from "../../../ui/icons";
+import BackButton from "../../../ui/BackButton";
 
 export default function ProjectHero({ project }) {
   const { category, title, location, image } = project;
@@ -14,12 +14,7 @@ export default function ProjectHero({ project }) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Link
-        to="/projects"
-        className="absolute left-6 top-8 font-display text-lead font-medium text-white md:left-12 md:top-11 lg:left-22 lg:top-24"
-      >
-        &lt;- Back
-      </Link>
+      <BackButton />
 
       <Link
         to="/contact"

@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
 import heroImage from "../../../assets/about/hero.jpg";
-import backArrow from "../../../assets/about/back-arrow.png";
+import BackButton from "../../ui/BackButton";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[480px] flex-col justify-between overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[554px]">
+    <section className="relative isolate min-h-[480px] overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[554px]">
       <img
         src={heroImage}
         alt="Construction site with a tower crane at golden hour"
@@ -12,18 +11,10 @@ export default function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-[rgba(7,17,43,0.42)]" />
 
-      <div className="mx-auto w-full max-w-360 px-6 pt-10 md:px-12 lg:px-22 lg:pt-28">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 font-display text-lead font-medium text-white"
-        >
-          <img src={backArrow} alt="" className="h-3.5 w-[18px] object-contain" />
-          Back
-        </Link>
-      </div>
+      <BackButton />
 
-      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pb-14">
-        <span className="mb-6 block font-display text-lead font-medium tracking-tight">
+      <div className="absolute bottom-7 left-6 right-6 md:bottom-8 md:left-12 md:right-12 lg:bottom-14 lg:left-22 lg:right-22">
+        <span className="mb-4 block font-display text-lead font-medium uppercase tracking-tight">
           ABOUT
         </span>
         <h1 className="mb-3 font-body text-display font-bold uppercase leading-[1.05] tracking-[0.06em]">

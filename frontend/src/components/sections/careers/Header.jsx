@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
 import heroImage from "../../../assets/careers/header_image.png";
-import backArrow from "../../../assets/about/back-arrow.png";
 import searchIcon from "../../../assets/careers/search.png";
 import locationIcon from "../../../assets/careers/location_icon.png";
+import BackButton from "../../ui/BackButton";
 import WipeButton from "../../ui/WipeButton";
 
 export default function Header() {
 	return (
-		<section className="relative isolate flex min-h-[480px] flex-col justify-between overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[554px]">
+		<section className="relative isolate min-h-[480px] overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[554px]">
 			<img
 				src={heroImage}
 				alt="Elevated highway under construction with tower cranes"
@@ -15,17 +14,9 @@ export default function Header() {
 			/>
 			<div className="absolute inset-0 -z-10 bg-[rgba(7,17,43,0.48)]" />
 
-			<div className="mx-auto w-full max-w-360 px-6 pt-10 md:px-12 lg:px-22 lg:pt-28">
-				<Link
-					to="/"
-					className="inline-flex items-center gap-2 font-display text-lead font-medium text-white transition-opacity hover:opacity-75"
-				>
-					<img src={backArrow} alt="" className="h-3.5 w-[18px] object-contain" />
-					Back
-				</Link>
-			</div>
+			<BackButton />
 
-			<div className="mx-auto flex w-full max-w-360 flex-col gap-8 px-6 pb-10 sm:px-10 sm:pb-12 lg:gap-9 lg:px-22 lg:pb-14">
+			<div className="absolute bottom-10 left-6 right-6 flex flex-col gap-8 sm:bottom-12 sm:left-10 sm:right-10 lg:bottom-14 lg:left-22 lg:right-22 lg:gap-9">
 				<div>
 					<span className="mb-1 block font-display text-xs font-medium uppercase tracking-[0.04em] sm:text-sm lg:mb-2 lg:text-[21px]">
 						Careers

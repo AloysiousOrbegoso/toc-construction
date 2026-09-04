@@ -29,7 +29,7 @@ export default function Hero() {
     <section className="relative bg-[#07112B] text-white overflow-hidden min-h-[calc(100dvh-72px)] md:min-h-[calc(100dvh-81px)]">
       <div className="max-w-360 mx-auto flex flex-wrap items-start min-h-[calc(100dvh-72px)] md:min-h-[calc(100dvh-81px)] relative z-10 pointer-events-none">
         <div className="pointer-events-auto flex-[1_1_320px] max-w-200 pt-[clamp(2.5rem,2rem+4vw,7.5rem)] pr-6 md:pr-12 lg:pr-22 pb-[clamp(2rem,1.5rem+3vw,3.75rem)] pl-6 md:pl-12 lg:pl-22 relative z-2">
-          <h1 className="font-body text-display font-bold leading-[0.99] tracking-[clamp(0.05rem,0.15vw,0.2325rem)] mb-[clamp(1.25rem,1rem+1.5vw,2rem)]">
+          <h1 className="mt-[clamp(1rem,1.5vw,2rem)] font-body text-display font-bold leading-[0.99] tracking-[clamp(0.05rem,0.15vw,0.2325rem)] mb-[clamp(1.25rem,1rem+1.5vw,2rem)]">
             We Build
             <br />
             The Future

@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import backArrow from "../../../assets/about/back-arrow.png";
+import BackButton from "../../ui/BackButton";
 
 export default function Hero() {
   return (
     <section className="relative isolate flex min-h-[480px] flex-col justify-end overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[558px]">
+      <BackButton />
       <img
         src="{/* hanap ko mga mga picture*/}"
         alt="fix ko pa dito"
