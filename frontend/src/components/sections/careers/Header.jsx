@@ -15,7 +15,7 @@ export default function Header() {
 			/>
 			<div className="absolute inset-0 -z-10 bg-[rgba(7,17,43,0.48)]" />
 
-			<div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pt-10">
+			<div className="mx-auto w-full max-w-360 px-6 pt-10 md:px-12 lg:px-22 lg:pt-28">
 				<Link
 					to="/"
 					className="inline-flex items-center gap-2 font-display text-lead font-medium text-white transition-opacity hover:opacity-75"

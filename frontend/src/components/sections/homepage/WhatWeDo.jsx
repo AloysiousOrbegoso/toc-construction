@@ -70,7 +70,7 @@ export default function WhatWeDo() {
               net against sub-pixel rounding, not load-bearing. */}
           <div className="relative w-full h-0 pt-[100%] overflow-hidden">
             {/* Bottom-left image — the biggest of the three */}
-            <div className="absolute left-[12%] bottom-0 w-[76%] h-[58%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
+            <div className="absolute left-[6%] bottom-0 w-[76%] h-[58%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
               <img
                 src={photoBottom}
                 alt="Heavy equipment on a construction site"
@@ -79,7 +79,7 @@ export default function WhatWeDo() {
             </div>
 
             {/* Top-left image */}
-            <div className="absolute left-[12%] top-[2%] w-[46%] h-[36%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
+            <div className="absolute left-[6%] top-[2%] w-[46%] h-[36%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
               <img
                 src={photoWide}
                 alt="Construction site overview"
@@ -91,7 +91,7 @@ export default function WhatWeDo() {
                 TOP-RIGHT portion of the bottom-left image, not its full height.
                 Sits flush at top/right (no negative offset), so it can never
                 float outside the card. */}
-            <div className="absolute right-0 top-0 w-[40%] h-[76%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-10">
+            <div className="absolute right-[6%] top-0 w-[40%] h-[76%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-10">
               <img
                 src={photoTall}
                 alt="Tower crane against a blue sky"

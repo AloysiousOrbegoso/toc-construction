@@ -29,7 +29,7 @@ export default function OurProcess() {
           <WipeButton variant="outline">Learn More</WipeButton>
         </div>
 
-        <div className="flex-[2_1_0%] min-w-0 flex flex-col sm:flex-row sm:flex-nowrap gap-[clamp(1.5rem,1.2rem+2vw,2.5rem)]">
+        <div className="flex-[2_1_0%] min-w-0 grid grid-cols-2 gap-[clamp(1.5rem,1.2rem+2vw,2.5rem)] sm:grid-cols-4">
           {processSteps.map((step) => (
             <div className="flex-1 min-w-0 flex flex-col gap-[clamp(1rem,0.8rem+1vw,1.5rem)]" key={step.number}>
               <div className="w-[clamp(56px,4vw+40px,74px)] h-[clamp(54px,4vw+38px,71px)] rounded-full flex items-center justify-center shrink-0">

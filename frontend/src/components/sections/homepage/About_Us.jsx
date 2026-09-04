@@ -28,11 +28,11 @@ export default function About_Us() {
                         Learn More About Us
                     </WipeButton>
                 </div>
-                <div className="rounded-md">
+                <div className="min-w-0 rounded-md">
                     <img
                         src={aboutUsImage}
                         alt="Architect reviewing construction plans"
-                        className="m-6 rounded-xl w-250 object-fill"
+                        className="mx-auto block w-full max-w-full rounded-xl object-contain"
                     />
                 </div>
             </div>

@@ -35,7 +35,7 @@ export default function Hero() {
             The Future
           </h1>
 
-          <p className="font-display text-lead font-medium leading-[1.36] mb-[clamp(1.5rem,1.2rem+2vw,2.5rem)] text-white">
+          <p className="font-display text-lead font-medium leading-[1.36] mb-[clamp(1.5rem,1.2rem+2vw,2.5rem)] text-white max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)]">
             Setting new standards in high-rise living
             <br />
             with precision engineering and
@@ -43,7 +43,7 @@ export default function Hero() {
             sustainable design.
           </p>
 
-          <div className="flex flex-wrap gap-16 mb-[clamp(2rem,1.5rem+3vw,5rem)]">
+          <div className="flex flex-wrap gap-4 sm:gap-16 mb-[clamp(2rem,1.5rem+3vw,5rem)]">
             <WipeButton>Get a Quote</WipeButton>
             <WipeButton variant="outline">
               View Projects
@@ -58,10 +58,10 @@ export default function Hero() {
                 alt=""
               />
               <div>
-                <p className="font-body text-h1 font-semibold leading-none">
+                <p className="font-body text-h1 font-semibold leading-none max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)]">
                   20
                 </p>
-                <p className="font-display text-small font-normal text-white tracking-[-0.28px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] mt-0">
+                <p className="font-display text-small font-normal text-white tracking-[-0.28px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)] mt-0">
                   Concrete Batching Plants
                 </p>
               </div>
@@ -74,10 +74,10 @@ export default function Hero() {
                 alt=""
               />
               <div>
-                <p className="font-body text-h1 font-semibold leading-none">
+                <p className="font-body text-h1 font-semibold leading-none max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)]">
                   40
                 </p>
-                <p className="font-display text-small font-normal text-white tracking-[-0.28px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] mt-0">
+                <p className="font-display text-small font-normal text-white tracking-[-0.28px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)] mt-0">
                   Provinces
                 </p>
               </div>
@@ -90,10 +90,10 @@ export default function Hero() {
                 alt=""
               />
               <div>
-                <p className="font-body text-h1 font-semibold leading-none">
+                <p className="font-body text-h1 font-semibold leading-none max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)]">
                   1500
                 </p>
-                <p className="font-display text-small font-normal text-white tracking-[-0.28px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] mt-0">
+                <p className="font-display text-small font-normal text-white tracking-[-0.28px] [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] max-sm:[text-shadow:0px_2px_4px_rgba(0,0,0,0.7)] mt-0">
                   Equipment
                 </p>
               </div>

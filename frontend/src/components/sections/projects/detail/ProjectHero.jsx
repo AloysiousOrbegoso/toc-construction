@@ -16,14 +16,14 @@ export default function ProjectHero({ project }) {
     >
       <Link
         to="/projects"
-        className="absolute left-6 top-8 font-display text-lead font-medium text-white md:left-12 md:top-11 lg:left-22"
+        className="absolute left-6 top-8 font-display text-lead font-medium text-white md:left-12 md:top-11 lg:left-22 lg:top-24"
       >
         &lt;- Back
       </Link>
 
       <Link
         to="/contact"
-        className="absolute right-6 top-8 flex items-center gap-2 rounded-full bg-white px-4 py-2 font-display text-small font-semibold text-neutral-950 shadow-[0_4px_16px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 md:right-12 md:top-11 lg:right-20"
+        className="absolute right-6 top-8 flex items-center gap-2 rounded-full bg-white px-4 py-2 font-display text-small font-semibold text-neutral-950 shadow-[0_4px_16px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 md:right-12 md:top-11 lg:right-20 lg:top-24"
       >
         <CalendarIcon className="h-4 w-4" />
         Book

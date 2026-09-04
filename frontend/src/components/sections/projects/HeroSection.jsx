@@ -15,7 +15,7 @@ export default function HeroSection() {
     >
       <a
         href="/"
-        className="absolute left-6 top-8 font-display text-lead font-medium text-white md:left-12 md:top-11 lg:left-22"
+        className="absolute left-6 top-8 font-display text-lead font-medium text-white md:left-12 md:top-11 lg:left-22 lg:top-24"
       >
         &lt;- Back
       </a>

@@ -1,30 +1,42 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import logo from "../../../assets/Logo.svg";
+import clearLogo from "../../../assets/logo_clear.png";
 import contactUsArrow from "../../../assets/homepage/contact_us_arrow.svg";
 
 // This is the navigation bar at the top of the site.
 // It has 3 parts: the logo, the menu links, and the "Contact Us" button.
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname } = useLocation();
+  const isHomepage = pathname === "/";
 
   const navLinkClass = ({ isActive }) =>
     [
-      "font-display font-medium text-small text-black relative inline-block",
+      `font-display font-medium text-small relative inline-block transition-colors duration-300 ${
+        isHomepage ? "text-black" : "text-black lg:text-white lg:[text-shadow:0_1px_3px_rgba(0,0,0,0.85)]"
+      }`,
       "w-full py-4 px-12 border-b border-black/[0.06]",
       "lg:w-auto lg:py-0 lg:px-0 lg:pb-2 lg:border-b-0",
       "hover:text-[#1e56a0]",
       isActive
-        ? "lg:after:content-[''] lg:after:absolute lg:after:left-0 lg:after:bottom-0 lg:after:w-[39px] lg:after:h-0.5 lg:after:bg-[#07112b]"
+        ? `lg:after:content-[''] lg:after:absolute lg:after:left-0 lg:after:bottom-0 lg:after:w-[39px] lg:after:h-0.5 ${isHomepage ? "lg:after:bg-[#07112b]" : "lg:after:bg-white"}`
         : "",
     ].join(" ");
 
   return (
-    <nav className="sticky top-0 z-100 h-18 md:h-20.25 bg-white flex items-center">
+    <nav className={`sticky top-0 z-100 h-18 md:h-20.25 flex items-center bg-white lg:absolute lg:left-0 lg:right-0 ${isHomepage ? "lg:bg-white" : "lg:bg-transparent"}`}>
       <div className="max-w-360 mx-auto w-full flex items-center justify-between gap-6 px-6 md:px-12 lg:px-22">
         {/* Logo on the left, links back to the homepage */}
         <Link to="/" className="block">
-          <img src={logo} alt="TOC Construction Logo" className="h-9 md:h-11 block" />
+          {isHomepage ? (
+            <img src={logo} alt="TOC Construction Logo" className="h-9 md:h-11 block" />
+          ) : (
+            <>
+              <img src={logo} alt="TOC Construction Logo" className="h-9 md:h-11 block lg:hidden" />
+              <img src={clearLogo} alt="TOC Construction Logo" className="hidden h-9 md:h-11 lg:block" />
+            </>
+          )}
         </Link>
 
         {/* Hamburger toggle, shown on smaller screens */}
@@ -55,7 +67,7 @@ function Navbar() {
         {/* Menu links in the middle */}
         <ul
           id="navbar-menu"
-          className={`list-none absolute left-0 right-0 top-18 md:top-20.25 bg-white flex flex-col items-start gap-0 overflow-hidden shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-[max-height] duration-350 ease-in-out ${
+          className={`list-none absolute left-0 right-0 top-18 md:top-20.25 bg-white lg:bg-transparent flex flex-col items-start gap-0 overflow-hidden shadow-[0_8px_16px_rgba(0,0,0,0.08)] transition-[max-height] duration-350 ease-in-out ${
             isOpen ? "max-h-100" : "max-h-0"
           } lg:static lg:flex-row lg:items-center lg:gap-10 lg:max-h-none lg:overflow-visible lg:shadow-none`}
         >
