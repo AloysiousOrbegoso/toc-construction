@@ -5,7 +5,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative isolate min-h-80 w-full overflow-hidden bg-[#101b2c] text-white sm:aspect-1440/554 sm:min-h-0"
+      className="relative isolate min-h-[480px] w-full overflow-hidden bg-[#101b2c] text-white sm:min-h-[520px] lg:aspect-1440/554 lg:min-h-0"
       style={{
         backgroundImage: `linear-gradient(rgba(7, 17, 43, 0.55), rgba(7, 17, 43, 0.55)), url(${image})`,
         backgroundPosition: "center",

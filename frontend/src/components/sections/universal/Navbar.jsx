@@ -20,7 +20,7 @@ function Navbar() {
       "lg:w-auto lg:py-0 lg:px-0 lg:pb-2 lg:border-b-0",
       "hover:text-[#1e56a0]",
       isActive
-        ? `lg:after:content-[''] lg:after:absolute lg:after:left-0 lg:after:bottom-0 lg:after:w-[39px] lg:after:h-0.5 ${isHomepage ? "lg:after:bg-[#07112b]" : "lg:after:bg-white"}`
+        ? `after:content-[''] after:absolute after:left-12 after:bottom-0 after:w-[39px] after:h-0.5 ${isHomepage ? "after:bg-[#07112b]" : "after:bg-[#163172]"} lg:after:left-0 ${isHomepage ? "lg:after:bg-[#07112b]" : "lg:after:bg-white"}`
         : "",
     ].join(" ");
 
@@ -72,7 +72,7 @@ function Navbar() {
           } lg:static lg:flex-row lg:items-center lg:gap-10 lg:max-h-none lg:overflow-visible lg:shadow-none`}
         >
           <li className="w-full lg:w-auto">
-            <NavLink to="/" className={navLinkClass} onClick={() => setIsOpen(false)}>
+            <NavLink to="/" end className={navLinkClass} onClick={() => setIsOpen(false)}>
               Home
             </NavLink>
           </li>

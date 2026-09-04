@@ -3,7 +3,7 @@ import backArrow from "../../../assets/about/back-arrow.png";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[558px] flex-col justify-end overflow-hidden bg-[#07112b] text-white">
+    <section className="relative isolate flex min-h-[480px] flex-col justify-end overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[558px]">
       <img
         src="{/* hanap ko mga mga picture*/}"
         alt="fix ko pa dito"

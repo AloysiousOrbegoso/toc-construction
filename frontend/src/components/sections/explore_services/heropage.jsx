@@ -3,7 +3,7 @@ import heroImage from "../../../assets/services_page/services.jpg";
 export default function HeroPage() {
 	return (
 		<section
-			className="relative isolate min-h-[320px] w-full overflow-hidden bg-[#101b2c] text-white sm:aspect-[1440/554] sm:min-h-0"
+			className="relative isolate min-h-[480px] w-full overflow-hidden bg-[#101b2c] text-white sm:min-h-[520px] lg:aspect-[1440/554] lg:min-h-0"
 			style={{
 				backgroundImage: `linear-gradient(rgba(7, 17, 43, 0.45), rgba(7, 17, 43, 0.45)), url(${heroImage})`,
 				backgroundPosition: "center",

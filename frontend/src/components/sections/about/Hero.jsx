@@ -4,7 +4,7 @@ import backArrow from "../../../assets/about/back-arrow.png";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[554px] flex-col justify-between overflow-hidden bg-[#07112b] text-white">
+    <section className="relative isolate flex min-h-[480px] flex-col justify-between overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[554px]">
       <img
         src={heroImage}
         alt="Construction site with a tower crane at golden hour"
