@@ -60,12 +60,17 @@ export default function WhatWeDo() {
           <WipeButton>Explore All Services</WipeButton>
         </div>
 
-        <div className="-m-6 flex-[1_1_500px] max-w-250">
-          {/* Bulletproof aspect-ratio box: height comes from padding-bottom,
-              not from an aspect-* utility, so it can't silently fail to apply */}
-          <div className="relative w-full h-0 pt-[75%]">
+        <div className="flex-[1_1_320px] w-full max-w-125 mx-auto">
+          {/* Bulletproof square box: height comes from padding-bottom, not an
+              aspect-* utility, so it can't silently fail to apply. Every photo
+              below is positioned in percentages (not fixed px) and stays
+              inside 0-100% on both axes, so this collage keeps the exact same
+              proportions — and stays contained in this one square card — at
+              any width, phone through desktop. overflow-hidden is a safety
+              net against sub-pixel rounding, not load-bearing. */}
+          <div className="relative w-full h-0 pt-[100%] overflow-hidden">
             {/* Bottom-left image — the biggest of the three */}
-            <div className="absolute left-12 bottom-0 w-[min(90%,calc(100%-3rem))] h-[56%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
+            <div className="absolute left-[12%] bottom-0 w-[76%] h-[58%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
               <img
                 src={photoBottom}
                 alt="Heavy equipment on a construction site"
@@ -74,7 +79,7 @@ export default function WhatWeDo() {
             </div>
 
             {/* Top-left image */}
-            <div className="absolute left-12 top-1 w-[52%] h-[40%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
+            <div className="absolute left-[12%] top-[2%] w-[46%] h-[36%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-0">
               <img
                 src={photoWide}
                 alt="Construction site overview"
@@ -83,12 +88,14 @@ export default function WhatWeDo() {
             </div>
 
             {/* Tall right image — positioned so it only overlaps the
-                TOP-RIGHT portion of the bottom-left image, not its full height */}
-            <div className="absolute right-0 -top-6 w-[42%] h-[82%] overflow-hidden border-30 border-[#f6f6f6] z-10">
+                TOP-RIGHT portion of the bottom-left image, not its full height.
+                Sits flush at top/right (no negative offset), so it can never
+                float outside the card. */}
+            <div className="absolute right-0 top-0 w-[40%] h-[76%] rounded-xl overflow-hidden border-4 border-[#f6f6f6] z-10">
               <img
                 src={photoTall}
                 alt="Tower crane against a blue sky"
-                className="overflow-hidden rounded-md w-full h-full object-cover block"
+                className="w-full h-full object-cover block"
               />
             </div>
           </div>
