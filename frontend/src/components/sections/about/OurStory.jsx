@@ -3,12 +3,12 @@ import ourStoryImage from "../../../assets/about/our-story.jpg";
 export default function OurStory() {
   return (
     <section id="story" className="bg-white py-24">
-      <div className="mx-auto grid w-full max-w-360 grid-cols-2 items-center gap-15 px-22">
+      <div className="mx-auto grid w-full max-w-360 grid-cols-[repeat(auto-fit,minmax(min(100%,320px),1fr))] items-center gap-[clamp(2rem,1.5rem+3vw,3.75rem)] px-6 md:px-12 lg:px-22">
         <div className="max-w-[520px]">
-          <h2 className="mb-6 font-body text-[40px] font-semibold leading-[1.2] text-[#1a1c1c]">
+          <h2 className="mb-6 font-body text-h1 font-semibold leading-[1.2] text-[#1a1c1c]">
             Our Story
           </h2>
-          <div className="space-y-4 font-display text-[21px] leading-[1.22] text-[#444651]">
+          <div className="space-y-4 font-display text-lead text-[#444651]">
             <p>
               For over decades, TOC Construction has stood as a pillar of structural stability and
               technical proficiency in the Philippine engineering landscape. Founded on the principles

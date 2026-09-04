@@ -39,28 +39,40 @@ only the copy/data it needs from `data/content.js`. To edit page copy, change
 `src/data/content.js` — no JSX edits required. To reuse a section elsewhere, import it
 directly, e.g. `import Testimonials from "./components/Testimonials"`.
 
-## Responsive strategy: clamp(), not breakpoints
+## Responsive strategy: fluid type scale + clamp()
 
-Per the project requirement, there are **no Tailwind breakpoint prefixes** (`sm:`, `md:`,
-`lg:`) anywhere in this codebase. Instead:
+Text sizing is centralised in a fluid type scale declared in `frontend/src/index.css`
+(the `@theme` block). Every text element uses one of these Tailwind utilities instead of
+an arbitrary `text-[..px]` / `text-[clamp(..)]` value or a `sm:text-* lg:text-*` pair:
 
-- **Type, spacing, icon/avatar sizes** all use `clamp(min, preferred, max)` so they scale
-  continuously with the viewport instead of jumping at fixed widths. These live in
-  `styles/tokens.css` (shared primitives like `.h2-display`, `.body-text`, `.section-pad`)
-  and in each component's own CSS file for local values.
-- **Column/row reflow** (projects grid, testimonials grid, footer columns) uses
-  `grid-template-columns: repeat(auto-fit, minmax(min(100%, Npx), 1fr))`, which is the
-  CSS-native fluid equivalent of a breakpoint-driven column count — it adapts to any
-  container width without media queries.
-- **Two-column sections** (About, Careers, CTA) use `flex-wrap` with
-  `flex: 1 1 clamp(min, preferred, max)` on each column, so they wrap to a single column
-  once the flex-basis can no longer fit, again without a fixed breakpoint.
+| Utility        | Phone -> Desktop | Role                                            |
+| -------------- | ---------------- | ----------------------------------------------- |
+| `text-display` | ~30 -> 60px      | hero titles (capped at 8vw on phones)           |
+| `text-h1`      | 28 -> 40px       | section titles                                  |
+| `text-h2`      | 22 -> 28px       | sub-section titles, hero subtitles              |
+| `text-h3`      | 18 -> 21px       | card / item titles                              |
+| `text-lead`    | 16 -> 18px       | intro paragraphs, eyebrows, prominent UI text   |
+| `text-body`    | 16px             | paragraphs, inputs, buttons                     |
+| `text-small`   | 14px             | meta, nav links, footer links                   |
+| `text-caption` | 12px             | labels, small eyebrows, legal (minimum size)    |
+
+Each utility also sets a paired line-height; a `leading-*` utility still overrides it.
+Sizes scale continuously with the viewport via `clamp()`, so no breakpoint prefixes are
+needed for text. To retune the whole site, change the token values in `index.css`.
+
+Layout follows the same idea where it can:
+
+- **Side padding** on every section is `px-6 md:px-12 lg:px-22`, matching the Navbar.
+- **Column reflow** (About story / values / leadership, footer columns) uses
+  `grid-template-columns: repeat(auto-fit, minmax(min(100%, Npx), 1fr))` so it adapts to
+  any container width without media queries. Form grids use `grid-cols-1 sm:grid-cols-2`.
+- **Card padding and gaps** use `clamp()` where a fixed value would not fit a phone.
 
 ## Design tokens
 
-Colors, fonts, and shared type/spacing scales are centralized in `src/styles/tokens.css`
-as CSS custom properties (`--color-*`, `--font-*`) so the palette can be updated in one
-place.
+Colors, fonts, and the type scale are centralized in `frontend/src/index.css` as Tailwind
+theme variables (`--color-*`, `--font-*`, `--text-*`). The body font is Inter
+(`--font-body`); `font-sans` is aliased to it so nothing falls back to a system face.
 
 ## Notes
 

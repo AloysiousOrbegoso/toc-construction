@@ -28,7 +28,7 @@ const services = [
 
 export default function SecondSection() {
 	return (
-		<section className="bg-white px-5 py-10 font-sans sm:px-8 sm:py-16 lg:px-8 lg:py-[65px]">
+		<section className="bg-white px-6 py-10 md:px-12 md:py-16 lg:px-22 lg:py-[65px]">
 			<div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-8">
 				{services.map((service) => (
 					<article
@@ -38,8 +38,8 @@ export default function SecondSection() {
 						<span className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#15378f]">
 							<img src={service.icon} alt="" aria-hidden="true" className="h-7 w-7 object-contain" />
 						</span>
-						<h2 className="text-base font-medium leading-tight text-black">{service.title}</h2>
-						<p className="mt-2 max-w-[330px] text-sm leading-[1.2] text-black sm:text-[15px]">
+						<h2 className="font-display text-h3 font-semibold leading-tight text-black">{service.title}</h2>
+						<p className="mt-2 max-w-[330px] font-display text-body text-black">
 							{service.description}
 						</p>
 					</article>

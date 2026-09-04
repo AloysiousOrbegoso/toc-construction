@@ -15,12 +15,12 @@ export default function Header() {
 			/>
 			<div className="absolute inset-0 -z-10 bg-[rgba(7,17,43,0.48)]" />
 
-			<div className="mx-auto w-full max-w-360 px-6 pt-7 sm:px-10 sm:pt-9 lg:px-22 lg:pt-10">
+			<div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pt-10">
 				<Link
 					to="/"
-					className="inline-flex items-center gap-2 font-display text-sm font-medium text-white transition-opacity hover:opacity-75 sm:text-base lg:text-xl"
+					className="inline-flex items-center gap-2 font-display text-lead font-medium text-white transition-opacity hover:opacity-75"
 				>
-					<img src={backArrow} alt="" className="h-3 w-4 object-contain sm:h-3.5 sm:w-[18px]" />
+					<img src={backArrow} alt="" className="h-3.5 w-[18px] object-contain" />
 					Back
 				</Link>
 			</div>

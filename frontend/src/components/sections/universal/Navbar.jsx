@@ -10,7 +10,7 @@ function Navbar() {
 
   const navLinkClass = ({ isActive }) =>
     [
-      "font-display font-medium text-sm text-black relative inline-block",
+      "font-display font-medium text-small text-black relative inline-block",
       "w-full py-4 px-12 border-b border-black/[0.06]",
       "lg:w-auto lg:py-0 lg:px-0 lg:pb-2 lg:border-b-0",
       "hover:text-[#1e56a0]",
@@ -89,7 +89,7 @@ function Navbar() {
         {/* Button on the right */}
         <Link
           to="/get-quote"
-          className="font-display shrink-0 flex items-center justify-end gap-2 bg-[#163172] text-white py-[clamp(0.24rem,1vw,0.3rem)] px-[clamp(0.6rem,2vw,.7rem)] rounded-full text-[18px] font-extralight whitespace-normal hover:bg-[#1e56a0]"
+          className="font-display shrink-0 flex items-center justify-end gap-2 bg-[#163172] text-white py-[clamp(0.24rem,1vw,0.3rem)] px-[clamp(0.6rem,2vw,.7rem)] rounded-full text-lead font-extralight whitespace-normal hover:bg-[#1e56a0]"
         >
           <span className="ml-2">Contact Us</span>
 

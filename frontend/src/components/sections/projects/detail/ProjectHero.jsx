@@ -6,7 +6,7 @@ export default function ProjectHero({ project }) {
 
   return (
     <section
-      className="relative isolate min-h-80 w-full overflow-hidden bg-[#101b2c] font-sans text-white sm:aspect-1440/554 sm:min-h-0"
+      className="relative isolate min-h-80 w-full overflow-hidden bg-[#101b2c] text-white sm:aspect-1440/554 sm:min-h-0"
       style={{
         backgroundImage: `linear-gradient(rgba(7, 17, 43, 0.55), rgba(7, 17, 43, 0.55)), url(${image})`,
         backgroundPosition: "center",
@@ -16,27 +16,27 @@ export default function ProjectHero({ project }) {
     >
       <Link
         to="/projects"
-        className="absolute left-5 top-8 text-xs font-normal text-white sm:left-10 sm:top-11 sm:text-base lg:left-20 lg:text-xl"
+        className="absolute left-6 top-8 font-display text-lead font-medium text-white md:left-12 md:top-11 lg:left-22"
       >
         &lt;- Back
       </Link>
 
       <Link
         to="/contact"
-        className="absolute right-5 top-8 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-neutral-950 shadow-[0_4px_16px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 sm:right-10 sm:top-11 lg:right-20"
+        className="absolute right-6 top-8 flex items-center gap-2 rounded-full bg-white px-4 py-2 font-display text-small font-semibold text-neutral-950 shadow-[0_4px_16px_rgba(0,0,0,0.18)] transition-transform hover:scale-105 md:right-12 md:top-11 lg:right-20"
       >
         <CalendarIcon className="h-4 w-4" />
         Book
       </Link>
 
-      <div className="absolute bottom-7 left-5 right-5 sm:bottom-5 sm:left-10 sm:right-auto lg:bottom-10 lg:left-20">
-        <p className="text-[10px] font-normal uppercase leading-none sm:text-[11px] lg:text-xl">
+      <div className="absolute bottom-7 left-6 right-6 md:bottom-8 md:left-12 md:right-12 lg:bottom-14 lg:left-22 lg:right-22">
+        <p className="mb-4 font-display text-lead font-medium uppercase tracking-tight">
           {category}
         </p>
-        <h1 className="mt-1 text-2xl font-bold uppercase leading-[0.98] tracking-[0.015em] sm:text-3xl sm:leading-none lg:text-6xl">
+        <h1 className="mb-3 font-body text-display font-bold uppercase leading-[1.05] tracking-[0.06em]">
           {title}
         </h1>
-        <p className="mt-1 text-base font-normal uppercase leading-tight sm:text-xl sm:leading-none lg:text-4xl">
+        <p className="font-display text-h2 font-medium uppercase tracking-[0.02em]">
           {location}
         </p>
       </div>

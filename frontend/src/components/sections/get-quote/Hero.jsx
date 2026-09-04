@@ -11,14 +11,14 @@ export default function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(7,17,43,0.55)_0%,rgba(7,17,43,0.75)_100%)]" />
 
-      <div className="mx-auto w-full max-w-360 px-22 pb-12">
-        <span className="mb-4 block font-display text-[21px] font-medium tracking-[-0.017em]">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pb-14">
+        <span className="mb-6 block font-display text-lead font-medium tracking-tight">
           REQUEST QUOTE
         </span>
-        <h1 className="mb-2 font-display text-[60px] font-bold uppercase leading-[1.05] tracking-[0.03em]">
+        <h1 className="mb-3 font-body text-display font-bold uppercase leading-[1.05] tracking-[0.06em]">
           Vision Realized
         </h1>
-        <p className="font-display text-[28px] font-medium uppercase tracking-[0.02em]">
+        <p className="font-display text-h2 font-medium uppercase tracking-[0.02em]">
           With Ground Work
         </p>
       </div>

@@ -7,8 +7,8 @@ import Lumina from "../../../assets/about/companyLogo/lumina.png";
 export default function TrustedBy() {
   return (
     <section className="bg-[#f6f6f6] py-[57px] text-center">
-      <div className="mx-auto w-full max-w-360 px-22">
-        <span className="mb-8 block font-display text-[21px] font-medium uppercase tracking-[0.067em] text-black">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22">
+        <span className="mb-8 block font-display text-lead font-medium uppercase tracking-[0.067em] text-black">
           Trusted by Industry Leaders
         </span>
 

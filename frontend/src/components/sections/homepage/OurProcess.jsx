@@ -16,13 +16,13 @@ export default function OurProcess() {
     <section className="bg-[#07112b] text-white">
       <div className="flex flex-col lg:flex-row lg:flex-nowrap gap-[clamp(2rem,1.5rem+3vw,3rem)] max-w-360 mx-auto py-[clamp(3rem,2.5rem+4vw,6.25rem)] px-6 md:px-12 lg:px-22 font-display">
         <div className="flex-[1_1_0%] min-w-0 max-w-105">
-          <span className="block text-white text-[clamp(0.95rem,0.85rem+0.5vw,1.3125rem)] font-medium tracking-[0.5px] uppercase mb-[clamp(0.75rem,0.6rem+0.8vw,1rem)]">
+          <span className="block text-white text-lead font-medium tracking-[0.5px] uppercase mb-[clamp(0.75rem,0.6rem+0.8vw,1rem)]">
             Our Process
           </span>
-          <h2 className="font-body text-[clamp(1.75rem,1.4rem+1.8vw,2.5rem)] font-semibold leading-[1.2] text-white mb-[clamp(1.25rem,1rem+1.4vw,1.5rem)]">
+          <h2 className="font-body text-h1 font-semibold leading-[1.2] text-white mb-[clamp(1.25rem,1rem+1.4vw,1.5rem)]">
             How We Work
           </h2>
-          <p className="text-[clamp(1rem,0.9rem+0.5vw,1.3125rem)] font-normal leading-normal text-white [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] max-w-150 mb-[clamp(2rem,1.6rem+2.5vw,3.5rem)] font-display">
+          <p className="text-lead font-normal leading-normal text-white [text-shadow:0px_4px_4px_rgba(0,0,0,0.1)] max-w-150 mb-[clamp(2rem,1.6rem+2.5vw,3.5rem)] font-display">
             A streamlined process that ensures your project is delivered on
             time, on budget, and beyond expectations.
           </p>
@@ -36,14 +36,14 @@ export default function OurProcess() {
                 <img src={step.icon} alt="" />
               </div>
               <div>
-                <span className="text-[clamp(1rem,0.9rem+0.5vw,1.3125rem)] font-semibold block mb-0.5">
+                <span className="text-h3 font-semibold block mb-0.5">
                   {step.number}
                 </span>
-                <span className="text-[clamp(1rem,0.9rem+0.5vw,1.3125rem)] font-semibold block">
+                <span className="text-h3 font-semibold block">
                   {step.title}
                 </span>
               </div>
-              <p className="text-[clamp(1rem,0.9rem+0.5vw,1.3125rem)] font-medium leading-[1.57] max-w-55 text-white/80 font-display">
+              <p className="text-body font-medium leading-[1.57] max-w-55 text-white/80 font-display">
                 {step.desc}
               </p>
             </div>

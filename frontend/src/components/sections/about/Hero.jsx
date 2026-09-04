@@ -12,24 +12,24 @@ export default function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-[rgba(7,17,43,0.42)]" />
 
-      <div className="mx-auto w-full max-w-360 px-22 pt-10">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pt-10">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 font-display text-xl font-medium text-white"
+          className="inline-flex items-center gap-2 font-display text-lead font-medium text-white"
         >
           <img src={backArrow} alt="" className="h-3.5 w-[18px] object-contain" />
           Back
         </Link>
       </div>
 
-      <div className="mx-auto w-full max-w-360 px-22 pb-14">
-        <span className="mb-6 block font-display text-[21px] font-medium tracking-tight">
+      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pb-14">
+        <span className="mb-6 block font-display text-lead font-medium tracking-tight">
           ABOUT
         </span>
-        <h1 className="mb-3 font-body text-[60px] font-bold uppercase leading-[1.05] tracking-[0.06em]">
+        <h1 className="mb-3 font-body text-display font-bold uppercase leading-[1.05] tracking-[0.06em]">
           TOC Construction
         </h1>
-        <p className="font-display text-[28px] font-medium uppercase tracking-[0.02em]">
+        <p className="font-display text-h2 font-medium uppercase tracking-[0.02em]">
           Building trust, one project at a time
         </p>
       </div>

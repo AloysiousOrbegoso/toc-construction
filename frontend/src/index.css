@@ -16,6 +16,47 @@
 
   --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  /* Make Tailwind's default `font-sans` resolve to the body font so
+     nothing on the site falls back to a system/Arial face. */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ------------------------------------------------------------------
+     Fluid type scale. Every text element on the site should use one of
+     these (text-display, text-h1, ... text-caption) instead of an
+     arbitrary text-[..px] / text-[clamp(..)] value or a sm:/lg: text-*
+     pair. Each size scales continuously between a phone width (~375px)
+     and the point where it reaches the Figma desktop value.
+
+       token    mobile -> desktop   role
+       display  ~32 -> 60px         hero titles (capped at 8vw on phones so a
+                                     long uppercase word still fits the screen)
+       h1       28 -> 40px          section titles
+       h2       22 -> 28px          sub-section titles, stat numbers
+       h3       18 -> 21px          card / item titles
+       lead     16 -> 18px          intro paragraphs, prominent UI text
+       body     16px                paragraphs, inputs, buttons
+       small    14px                meta, nav links, footer links
+       caption  12px                eyebrows, labels, legal (floor)
+
+     Line-heights are paired so `text-h1` sets both; `leading-*`
+     utilities still override when a one-off is needed.
+     ------------------------------------------------------------------ */
+  --text-display: min(8vw, clamp(2.25rem, 1.5rem + 3.5vw, 3.75rem));
+  --text-display--line-height: 1.05;
+  --text-h1: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+  --text-h1--line-height: 1.2;
+  --text-h2: clamp(1.375rem, 1.15rem + 1vw, 1.75rem);
+  --text-h2--line-height: 1.25;
+  --text-h3: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+  --text-h3--line-height: 1.3;
+  --text-lead: clamp(1rem, 0.95rem + 0.4vw, 1.125rem);
+  --text-lead--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.6;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
 
   --animate-marquee: marquee 30s linear infinite;
 }
@@ -38,8 +79,12 @@
   }
 
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    color: var(--color-ink);
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
   }
 
   a {
