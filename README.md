@@ -29,6 +29,7 @@ src/
   styles/
     tokens.css            design tokens (colors, fonts) + shared layout/type primitives
   App.jsx                 composes the six sections in order
+
   index.js                React entry point
 public/
   index.html               HTML shell, loads Inter + Manrope from Google Fonts
@@ -45,16 +46,16 @@ Text sizing is centralised in a fluid type scale declared in `frontend/src/index
 (the `@theme` block). Every text element uses one of these Tailwind utilities instead of
 an arbitrary `text-[..px]` / `text-[clamp(..)]` value or a `sm:text-* lg:text-*` pair:
 
-| Utility        | Phone -> Desktop | Role                                            |
-| -------------- | ---------------- | ----------------------------------------------- |
-| `text-display` | ~30 -> 60px      | hero titles (capped at 8vw on phones)           |
-| `text-h1`      | 28 -> 40px       | section titles                                  |
-| `text-h2`      | 22 -> 28px       | sub-section titles, hero subtitles              |
-| `text-h3`      | 18 -> 21px       | card / item titles                              |
-| `text-lead`    | 16 -> 18px       | intro paragraphs, eyebrows, prominent UI text   |
-| `text-body`    | 16px             | paragraphs, inputs, buttons                     |
-| `text-small`   | 14px             | meta, nav links, footer links                   |
-| `text-caption` | 12px             | labels, small eyebrows, legal (minimum size)    |
+| Utility        | Phone -> Desktop | Role                                          |
+| -------------- | ---------------- | --------------------------------------------- |
+| `text-display` | ~30 -> 60px      | hero titles (capped at 8vw on phones)         |
+| `text-h1`      | 28 -> 40px       | section titles                                |
+| `text-h2`      | 22 -> 28px       | sub-section titles, hero subtitles            |
+| `text-h3`      | 18 -> 21px       | card / item titles                            |
+| `text-lead`    | 16 -> 18px       | intro paragraphs, eyebrows, prominent UI text |
+| `text-body`    | 16px             | paragraphs, inputs, buttons                   |
+| `text-small`   | 14px             | meta, nav links, footer links                 |
+| `text-caption` | 12px             | labels, small eyebrows, legal (minimum size)  |
 
 Each utility also sets a paired line-height; a `leading-*` utility still overrides it.
 Sizes scale continuously with the viewport via `clamp()`, so no breakpoint prefixes are
