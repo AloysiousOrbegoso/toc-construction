@@ -37,7 +37,7 @@ export default function ProjectInformation({ onBack, onContinue }) {
                 Attachments
               </span>
             </li>
-          </ol>
+          </ol> 
         </div>
 
         <div className="mx-auto max-w-[622px]">
