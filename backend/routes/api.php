@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-// API routes go here, e.g.:
-// Route::get('/example', fn () => response()->json(['ok' => true]));
+Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/forgot-password', [AuthController::class, 'forgotPassword']);
+Route::post('/auth/reset-password', [AuthController::class, 'resetPassword']);
+Route::middleware('auth:api')->get('/auth/me', [AuthController::class, 'me']);
