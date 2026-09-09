@@ -36,7 +36,7 @@ export default function WipeButton({
   const look = variant === "outline" ? outline : fill;
 
   return (
-    <button className={`${base} ${look} ${className}`} {...props}>
+    <Component className={`${base} ${look} ${className}`} {...props}>
       {/* the white panel: it starts squished to 0 width, then grows back to full on hover */}
       <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-300 ease-out group-hover:scale-x-100" />
 
@@ -49,6 +49,6 @@ export default function WipeButton({
           className="relative z-10 h-5 w-5 object-contain transition duration-300 group-hover:brightness-0"
         />
       )}
-    </button>
+    </Component>
   );
 }

@@ -8,6 +8,9 @@ import About from "./components/pages/About";
 import ExploreServices from "./components/pages/Explore_Services";
 import Careers from "./components/pages/Careers";
 import GetQuote from "./components/pages/GetQuote";
+import Login from "./components/pages/auth/Login";
+import ForgotPassword from "./components/pages/auth/ForgotPassword";
+import Dashboard from "./components/pages/auth/Dashboard";
 
 // admin
 import AdminMessages from "./components/admin-pages/AdminMessages";
@@ -16,6 +19,11 @@ function App() {
   const location = useLocation();
 
   const isAdmin = location.pathname.startsWith("/admin");
+  const isAuthPage = ["/login", "/forgot-password", "/dashboard"].includes(location.pathname);
+
+  if (isAuthPage) {
+    return <Routes><Route path="/login" element={<Login />} /><Route path="/forgot-password" element={<ForgotPassword />} /><Route path="/dashboard" element={localStorage.getItem("toc_token") ? <Dashboard /> : <Login />} /></Routes>;
+  }
 
   return (
     <>

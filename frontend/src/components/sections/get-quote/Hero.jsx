@@ -1,20 +1,23 @@
+import heroImage from "../../../assets/get_quote_page/hero.png";
 import BackButton from "../../ui/BackButton";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[480px] flex-col justify-end overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[558px]">
+    <section
+      className="relative isolate min-h-[480px] w-full overflow-hidden bg-[#101b2c] text-white sm:min-h-[520px] lg:aspect-[1440/554] lg:min-h-0"
+      style={{
+        backgroundImage: `linear-gradient(rgba(7, 17, 43, 0.55), rgba(7, 17, 43, 0.55)), url(${heroImage})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <BackButton />
-      <img
-        src="{/* hanap ko mga mga picture*/}"
-        alt="fix ko pa dito"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
-      />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(7,17,43,0.55)_0%,rgba(7,17,43,0.75)_100%)]" />
 
-      <div className="mx-auto w-full max-w-360 px-6 md:px-12 lg:px-22 pb-14">
-        <span className="mb-6 block font-display text-lead font-medium tracking-tight">
-          REQUEST QUOTE
-        </span>
+      <div className="absolute bottom-7 left-6 right-6 md:bottom-8 md:left-12 md:right-12 lg:bottom-14 lg:left-22 lg:right-22">
+        <p className="mb-4 font-display text-lead font-medium uppercase tracking-tight">
+          Request Quote
+        </p>
         <h1 className="mb-3 font-body text-display font-bold uppercase leading-[1.05] tracking-[0.06em]">
           Vision Realized
         </h1>
