@@ -12,8 +12,13 @@ import Login from "./components/pages/auth/Login";
 import ForgotPassword from "./components/pages/auth/ForgotPassword";
 import Dashboard from "./components/pages/auth/Dashboard";
 
+// admin
+import AdminMessages from "./components/admin-pages/AdminMessages";
+
 function App() {
   const location = useLocation();
+
+  const isAdmin = location.pathname.startsWith("/admin");
   const isAuthPage = ["/login", "/forgot-password", "/dashboard"].includes(location.pathname);
 
   if (isAuthPage) {
@@ -22,17 +27,25 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {!isAdmin && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:id" element={<ProjectDetailPage />} />
         <Route path="/services" element={<ExploreServices />} />
-        <Route path="/about" element={<About />} /> 
+        <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/get-quote" element={<GetQuote />} />     
+        <Route path="/get-quote" element={<GetQuote />} />
+
+        {/* Admin */}
+        <Route
+          path="/admin/messages"
+          element={<AdminMessages />}
+        />
       </Routes>
-      <Footer />
+
+      {!isAdmin && <Footer />}
     </>
   );
 }
