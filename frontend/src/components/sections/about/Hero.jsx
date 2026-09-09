@@ -3,14 +3,15 @@ import BackButton from "../../ui/BackButton";
 
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[480px] overflow-hidden bg-[#07112b] text-white sm:min-h-[520px] lg:min-h-[554px]">
-      <img
-        src={heroImage}
-        alt="Construction site with a tower crane at golden hour"
-        className="absolute inset-0 -z-10 h-full w-full object-cover"
-      />
-      <div className="absolute inset-0 -z-10 bg-[rgba(7,17,43,0.42)]" />
-
+    <section
+      className="relative isolate min-h-[480px] w-full overflow-hidden bg-[#101b2c] text-white sm:min-h-[520px] lg:aspect-[1440/554] lg:min-h-0"
+      style={{
+        backgroundImage: `linear-gradient(rgba(7, 17, 43, 0.42), rgba(7, 17, 43, 0.42)), url(${heroImage})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <BackButton />
 
       <div className="absolute bottom-7 left-6 right-6 md:bottom-8 md:left-12 md:right-12 lg:bottom-14 lg:left-22 lg:right-22">
