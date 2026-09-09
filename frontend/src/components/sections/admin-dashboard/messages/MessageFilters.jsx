@@ -5,34 +5,42 @@ function MessageFilters() {
       <div className="flex items-center gap-2">
         <button
           type="button"
-          className="flex items-center gap-2 px-4 py-2 bg-admin-active text-white rounded-md text-small font-medium"
+          className="flex items-center gap-2 h-9 px-4 bg-admin-active text-white rounded-md text-small font-medium"
         >
           <span>All Inquiries</span>
-          <span>48</span>
+          <span className="flex items-center justify-center w-7 h-5 rounded bg-white/15 text-white text-caption">
+            48
+          </span>
         </button>
 
         <button
           type="button"
-          className="flex items-center gap-2 px-4 py-2 bg-admin-card border border-admin-border text-admin-secondary rounded-md text-small font-medium"
+          className="flex items-center gap-2 h-9 px-4 bg-admin-card border border-admin-border text-admin-secondary rounded-md text-small font-medium"
         >
           <span>Unread</span>
-          <span>12</span>
+          <span className="flex items-center justify-center w-7 h-5 rounded bg-admin-icon-background text-admin-secondary text-caption">
+            12
+          </span>
         </button>
 
         <button
           type="button"
-          className="flex items-center gap-2 px-4 py-2 bg-admin-card border border-admin-border text-admin-secondary rounded-md text-small font-medium"
+          className="flex items-center gap-2 h-9 px-4 bg-admin-card border border-admin-border text-admin-secondary rounded-md text-small font-medium"
         >
           <span>Read</span>
-          <span>24</span>
+          <span className="flex items-center justify-center w-7 h-5 rounded bg-admin-icon-background text-admin-secondary text-caption">
+            24
+          </span>
         </button>
 
         <button
           type="button"
-          className="flex items-center gap-2 px-4 py-2 bg-admin-card border border-admin-border text-admin-secondary rounded-md text-small font-medium"
+          className="flex items-center gap-2 h-9 px-4 bg-admin-card border border-admin-border text-admin-secondary rounded-md text-small font-medium"
         >
           <span>Replied</span>
-          <span>12</span>
+          <span className="flex items-center justify-center w-7 h-5 rounded bg-admin-icon-background text-admin-secondary text-caption">
+            12
+          </span>
         </button>
       </div>
 

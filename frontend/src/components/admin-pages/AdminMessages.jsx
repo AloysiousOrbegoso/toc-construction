@@ -1,11 +1,11 @@
-import Sidebar from "../sections/admin-dashboard/Sidebar";
-import HeaderBar from "../sections/admin-dashboard/HeaderBar";
+import Sidebar from "../sections/admin-dashboard/admin-aside/Sidebar";
+import HeaderBar from "../sections/admin-dashboard/admin-aside/HeaderBar";
 import MessageFilters from "../sections/admin-dashboard/messages/MessageFilters";
 import MessagesTable from "../sections/admin-dashboard/messages/MessagesTable";
 
 function AdminMessages() {
   return (
-    <div className="flex min-h-screen bg-[#F4F4F4]">
+    <div className="flex min-h-screen bg-#F4F4F4">
       <Sidebar />
 
       <main className="flex-1">

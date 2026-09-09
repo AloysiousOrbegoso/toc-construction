@@ -1,9 +1,9 @@
 import {
   NotificationIcon,
   DarkModeToggle,
-} from "../../ui/admin-icons/AdminIcons";
+} from "../../../ui/admin-icons/AdminIcons";
 
-import adminAvatar from "../../../assets/admin/adminProfile.png";
+import adminAvatar from "../../../../assets/admin/adminProfile.png";
 
 function HeaderBar() {
   return (

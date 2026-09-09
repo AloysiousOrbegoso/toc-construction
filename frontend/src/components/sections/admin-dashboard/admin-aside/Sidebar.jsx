@@ -1,4 +1,4 @@
-import Logo from "../../../assets/logo_clear.png";
+import Logo from "../../../../assets/Logo.png";
 
 import {
   DashboardIcon,
@@ -9,7 +9,7 @@ import {
   SecurityIcon,
   SettingsIcon,
   LogoutIcon,
-} from "../../ui/admin-icons/AdminIcons";
+} from "../../../ui/admin-icons/AdminIcons";
 
 function Sidebar() {
   return (
