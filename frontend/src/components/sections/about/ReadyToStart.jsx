@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import WipeButton from "../../ui/WipeButton";
 
 export default function ReadyToStart() {
   return (
@@ -10,12 +11,9 @@ export default function ReadyToStart() {
         <h2 className="mb-8 font-body text-h1 font-semibold leading-[1.2] text-black">
           Let&rsquo;s Build Something Amazing Together
         </h2>
-        <Link
-          to="/get-quote"
-          className="inline-flex items-center justify-center rounded-xl bg-[#1e56a0] px-10 py-4 font-display text-lead font-bold text-white hover:bg-[#163172]"
-        >
+        <WipeButton as={Link} to="/get-quote">
           Get Free Consultation
-        </Link>
+        </WipeButton>
       </div>
     </section>
   );
