@@ -8,6 +8,9 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Add calls to feature-specific seeders here once they exist.
+        $this->call([
+            ProjectSeeder::class,
+            JobListingSeeder::class,
+        ]);
     }
 }

@@ -1,9 +1,35 @@
 # TOC Construction
 
-## Getting started
+This repo has two parts: `frontend/` (React + Vite) and `backend/` (Laravel API).
+
+## Backend setup
 
 ```bash
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+# Create the database named in .env (DB_DATABASE, defaults to toc_construction), then:
+php artisan migrate --seed
+php artisan storage:link
+php artisan serve
+```
+
+This serves the API at `http://localhost:8000`. It provides:
+
+- `GET /api/projects` (optional `?category=` filter), `GET /api/projects/{slug}` — project portfolio, seeded from `database/seeders/ProjectSeeder.php`
+- `GET /api/jobs` — open job listings, seeded from `database/seeders/JobListingSeeder.php`
+- `POST /api/quote-requests` — the "Get a Quote" form (multipart, supports file attachments)
+- `POST /api/job-applications` — the Careers application form (multipart, requires a resume file)
+
+Submissions are stored in the database only (no email yet); a future admin UI is expected to read them directly. Uploaded files are served from `/storage/...` via the `public` disk.
+
+## Frontend setup
+
+```bash
+cd frontend
 npm install
+cp .env.example .env   # points VITE_API_URL at the backend above
 npm run dev
 ```
 

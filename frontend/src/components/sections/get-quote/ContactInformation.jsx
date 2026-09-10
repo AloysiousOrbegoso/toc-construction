@@ -1,4 +1,9 @@
-export default function ContactInformation({ onContinue }) {
+export default function ContactInformation({ values, onChange, onContinue }) {
+  function handleChange(event) {
+    const { name, value } = event.target;
+    onChange({ [name]: value });
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     onContinue();
@@ -45,6 +50,17 @@ export default function ContactInformation({ onContinue }) {
             onSubmit={handleSubmit}
             className="flex flex-col gap-8 rounded-xl border border-[#e2e2e2] bg-white p-[clamp(1.25rem,1rem+3vw,3rem)] shadow-[0px_8px_15px_0px_rgba(0,0,0,0.08)]"
           >
+            <input
+              type="text"
+              name="website"
+              value={values.website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
+
             <div className="flex flex-col gap-[7px] border-b border-[#e2e2e2] pb-[25px]">
               <h2 className="font-body text-h1 font-semibold text-[#1a1c1c]">
                 Contact Information
@@ -64,6 +80,8 @@ export default function ContactInformation({ onContinue }) {
                   name="firstName"
                   type="text"
                   placeholder="Juan"
+                  value={values.firstName}
+                  onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
@@ -78,6 +96,8 @@ export default function ContactInformation({ onContinue }) {
                   name="lastName"
                   type="text"
                   placeholder="Dela Cruz"
+                  value={values.lastName}
+                  onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
@@ -92,6 +112,8 @@ export default function ContactInformation({ onContinue }) {
                   name="companyName"
                   type="text"
                   placeholder="PhilBuild Inc."
+                  value={values.companyName}
+                  onChange={handleChange}
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
               </div>
@@ -105,6 +127,8 @@ export default function ContactInformation({ onContinue }) {
                   name="email"
                   type="email"
                   placeholder="juan@example.com"
+                  value={values.email}
+                  onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
@@ -119,6 +143,8 @@ export default function ContactInformation({ onContinue }) {
                   name="phone"
                   type="tel"
                   placeholder="+63 900 000 0000"
+                  value={values.phone}
+                  onChange={handleChange}
                   required
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
@@ -131,7 +157,8 @@ export default function ContactInformation({ onContinue }) {
                 <select
                   id="role"
                   name="role"
-                  defaultValue=""
+                  value={values.role}
+                  onChange={handleChange}
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c]"
                 >
                   <option value="" disabled hidden>
@@ -153,7 +180,8 @@ export default function ContactInformation({ onContinue }) {
                 <select
                   id="country"
                   name="country"
-                  defaultValue="philippines"
+                  value={values.country}
+                  onChange={handleChange}
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c]"
                 >
                   <option value="philippines">Philippines</option>
@@ -170,6 +198,8 @@ export default function ContactInformation({ onContinue }) {
                   name="cityProvince"
                   type="text"
                   placeholder="Metro Manila"
+                  value={values.cityProvince}
+                  onChange={handleChange}
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
               </div>
