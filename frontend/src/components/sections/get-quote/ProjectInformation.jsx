@@ -1,4 +1,9 @@
-export default function ProjectInformation({ onBack, onContinue }) {
+export default function ProjectInformation({ values, onChange, onBack, onContinue }) {
+  function handleChange(event) {
+    const { name, value } = event.target;
+    onChange({ [name]: value });
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     onContinue();
@@ -59,7 +64,8 @@ export default function ProjectInformation({ onBack, onContinue }) {
                 <select
                   id="projectType"
                   name="projectType"
-                  defaultValue=""
+                  value={values.projectType}
+                  onChange={handleChange}
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c]"
                 >
                   <option value="" disabled hidden>
@@ -81,7 +87,8 @@ export default function ProjectInformation({ onBack, onContinue }) {
                 <select
                   id="budget"
                   name="budget"
-                  defaultValue=""
+                  value={values.budget}
+                  onChange={handleChange}
                   className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c]"
                 >
                   <option value="" disabled hidden>
@@ -117,6 +124,8 @@ export default function ProjectInformation({ onBack, onContinue }) {
                     name="location"
                     type="text"
                     placeholder="City, Province or Exact Address"
+                    value={values.location}
+                    onChange={handleChange}
                     className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] py-[14px] pl-[44px] pr-[17px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                   />
                 </div>
@@ -144,6 +153,8 @@ export default function ProjectInformation({ onBack, onContinue }) {
                     name="timeline"
                     type="text"
                     placeholder="e.g., Start in 3 months, 1 year duration"
+                    value={values.timeline}
+                    onChange={handleChange}
                     className="w-full rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] py-[14px] pl-[44px] pr-[17px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                   />
                 </div>
@@ -159,6 +170,8 @@ export default function ProjectInformation({ onBack, onContinue }) {
                   rows={6}
                   required
                   placeholder="Please provide a detailed description of the project requirements, specific challenges, and core objectives."
+                  value={values.scope}
+                  onChange={handleChange}
                   className="w-full resize-y rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
               </div>

@@ -1,16 +1,52 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { projectsPageContent } from "../../../data/content";
+import { fetchProjects } from "../../../lib/api";
 import { FilterIcon } from "../../ui/icons";
 
 const INITIAL_COUNT = 6;
 
 export default function ProjectsGrid() {
-  const { projects } = projectsPageContent;
+  const [projects, setProjects] = useState([]);
+  const [status, setStatus] = useState("loading");
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchProjects()
+      .then((data) => {
+        if (cancelled) return;
+        setProjects(data);
+        setStatus("ready");
+      })
+      .catch(() => {
+        if (cancelled) return;
+        setStatus("error");
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const visibleProjects = projects.slice(0, visibleCount);
   const hasMore = visibleCount < projects.length;
+
+  if (status === "loading") {
+    return (
+      <section className="bg-white px-6 py-16 text-center text-neutral-500 md:px-12 lg:px-22 lg:py-20">
+        Loading projects…
+      </section>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <section className="bg-white px-6 py-16 text-center text-neutral-500 md:px-12 lg:px-22 lg:py-20">
+        We couldn't load projects right now. Please try again later.
+      </section>
+    );
+  }
 
   return (
     <section className="bg-white px-6 py-16 text-neutral-950 md:px-12 lg:px-22 lg:py-20">

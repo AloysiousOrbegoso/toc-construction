@@ -1,9 +1,35 @@
 # TOC Construction
 
-## Getting started
+This repo has two parts: `frontend/` (React + Vite) and `backend/` (Laravel API).
+
+## Backend setup
 
 ```bash
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+# Create the database named in .env (DB_DATABASE, defaults to toc_construction), then:
+php artisan migrate --seed
+php artisan storage:link
+php artisan serve
+```
+
+This serves the API at `http://localhost:8000`. It provides:
+
+- `GET /api/projects` (optional `?category=` filter), `GET /api/projects/{slug}` — project portfolio, seeded from `database/seeders/ProjectSeeder.php`
+- `GET /api/jobs` — open job listings, seeded from `database/seeders/JobListingSeeder.php`
+- `POST /api/quote-requests` — the "Get a Quote" form (multipart, supports file attachments)
+- `POST /api/job-applications` — the Careers application form (multipart, requires a resume file)
+
+Submissions are stored in the database only (no email yet); a future admin UI is expected to read them directly. Uploaded files are served from `/storage/...` via the `public` disk.
+
+## Frontend setup
+
+```bash
+cd frontend
 npm install
+cp .env.example .env   # points VITE_API_URL at the backend above
 npm run dev
 ```
 
@@ -29,6 +55,7 @@ src/
   styles/
     tokens.css            design tokens (colors, fonts) + shared layout/type primitives
   App.jsx                 composes the six sections in order
+
   index.js                React entry point
 public/
   index.html               HTML shell, loads Inter + Manrope from Google Fonts
@@ -45,16 +72,16 @@ Text sizing is centralised in a fluid type scale declared in `frontend/src/index
 (the `@theme` block). Every text element uses one of these Tailwind utilities instead of
 an arbitrary `text-[..px]` / `text-[clamp(..)]` value or a `sm:text-* lg:text-*` pair:
 
-| Utility        | Phone -> Desktop | Role                                            |
-| -------------- | ---------------- | ----------------------------------------------- |
-| `text-display` | ~30 -> 60px      | hero titles (capped at 8vw on phones)           |
-| `text-h1`      | 28 -> 40px       | section titles                                  |
-| `text-h2`      | 22 -> 28px       | sub-section titles, hero subtitles              |
-| `text-h3`      | 18 -> 21px       | card / item titles                              |
-| `text-lead`    | 16 -> 18px       | intro paragraphs, eyebrows, prominent UI text   |
-| `text-body`    | 16px             | paragraphs, inputs, buttons                     |
-| `text-small`   | 14px             | meta, nav links, footer links                   |
-| `text-caption` | 12px             | labels, small eyebrows, legal (minimum size)    |
+| Utility        | Phone -> Desktop | Role                                          |
+| -------------- | ---------------- | --------------------------------------------- |
+| `text-display` | ~30 -> 60px      | hero titles (capped at 8vw on phones)         |
+| `text-h1`      | 28 -> 40px       | section titles                                |
+| `text-h2`      | 22 -> 28px       | sub-section titles, hero subtitles            |
+| `text-h3`      | 18 -> 21px       | card / item titles                            |
+| `text-lead`    | 16 -> 18px       | intro paragraphs, eyebrows, prominent UI text |
+| `text-body`    | 16px             | paragraphs, inputs, buttons                   |
+| `text-small`   | 14px             | meta, nav links, footer links                 |
+| `text-caption` | 12px             | labels, small eyebrows, legal (minimum size)  |
 
 Each utility also sets a paired line-height; a `leading-*` utility still overrides it.
 Sizes scale continuously with the viewport via `clamp()`, so no breakpoint prefixes are

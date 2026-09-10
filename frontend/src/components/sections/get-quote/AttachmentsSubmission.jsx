@@ -1,15 +1,22 @@
 import { useRef, useState } from "react";
 
-export default function AttachmentsSubmission({ onBack }) {
+export default function AttachmentsSubmission({
+  notes,
+  onNotesChange,
+  files,
+  onFilesChange,
+  onBack,
+  onSubmit,
+  status,
+  errors,
+}) {
   const inputRef = useRef(null);
-  const [files, setFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   function addFiles(fileList) {
     const incoming = Array.from(fileList);
     if (incoming.length === 0) return;
-    setFiles((current) => [...current, ...incoming]);
+    onFilesChange([...files, ...incoming]);
   }
 
   function handleDrop(event) {
@@ -19,12 +26,12 @@ export default function AttachmentsSubmission({ onBack }) {
   }
 
   function removeFile(index) {
-    setFiles((current) => current.filter((_, i) => i !== index));
+    onFilesChange(files.filter((_, i) => i !== index));
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    setSubmitted(true);
+    onSubmit();
   }
 
   return (
@@ -64,7 +71,7 @@ export default function AttachmentsSubmission({ onBack }) {
         </div>
 
         <div className="mx-auto max-w-[622px]">
-          {submitted ? (
+          {status === "success" ? (
             <div className="flex flex-col items-center gap-4 rounded-xl border border-[#e2e2e2] bg-white p-[clamp(1.25rem,1rem+3vw,3rem)] text-center shadow-[0px_8px_15px_0px_rgba(0,0,0,0.08)]">
               <h2 className="font-body text-h1 font-semibold text-[#1a1c1c]">
                 Request Submitted
@@ -124,6 +131,7 @@ export default function AttachmentsSubmission({ onBack }) {
                     ref={inputRef}
                     type="file"
                     multiple
+                    accept=".pdf,.jpg,.jpeg,.png"
                     className="hidden"
                     onChange={(event) => addFiles(event.target.files)}
                   />
@@ -166,10 +174,20 @@ export default function AttachmentsSubmission({ onBack }) {
                   id="notes"
                   name="notes"
                   rows={5}
+                  value={notes}
+                  onChange={(event) => onNotesChange(event.target.value)}
                   placeholder="Any final details we should know before reviewing your request?"
                   className="w-full resize-y rounded-lg border border-[#c5c5d3] bg-[#f9f9f9] px-[17px] py-[14px] font-display text-body text-[#1a1c1c] placeholder:text-[#6b7280]"
                 />
               </div>
+
+              {status === "error" && (
+                <p className="font-display text-small text-red-600">
+                  {errors
+                    ? Object.values(errors).flat().join(" ")
+                    : "Something went wrong submitting your request. Please try again."}
+                </p>
+              )}
 
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <button
@@ -181,10 +199,10 @@ export default function AttachmentsSubmission({ onBack }) {
                 </button>
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#1e56a0] px-8 py-4 font-display text-lead font-bold text-white hover:bg-[#163172]"
+                  disabled={status === "submitting"}
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#1e56a0] px-8 py-4 font-display text-lead font-bold text-white hover:bg-[#163172] disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  Submit Request
-                  
+                  {status === "submitting" ? "Submitting…" : "Submit Request"}
                 </button>
               </div>
             </form>
