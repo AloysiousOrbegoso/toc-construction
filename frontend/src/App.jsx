@@ -14,6 +14,7 @@ import Dashboard from "./components/pages/auth/Dashboard";
 
 // admin
 import AdminMessages from "./components/admin-pages/AdminMessages";
+import AdminDashboard from "./components/admin-pages/AdminDashboard";
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,10 @@ function App() {
         <Route path="/get-quote" element={<GetQuote />} />
 
         {/* Admin */}
+        <Route
+          path="/admin/dashboard"
+          element={<AdminDashboard />}
+        />
         <Route
           path="/admin/messages"
           element={<AdminMessages />}

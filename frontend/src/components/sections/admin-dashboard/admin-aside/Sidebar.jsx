@@ -11,83 +11,84 @@ import {
   LogoutIcon,
 } from "../../../ui/admin-icons/AdminIcons";
 
-function Sidebar() {
+function NavItem({ href, label, icon, isActive }) {
   return (
-    <aside className="w-64 min-h-screen bg-admin-sidebar text-white flex flex-col">
-      {/* Logo */}
+    <a
+      href={href}
+      className={
+        "flex items-center gap-3 rounded-md px-4 py-3 text-sm font-medium " +
+        (isActive ? "bg-blue-700 text-white" : "text-gray-400")
+      }
+    >
+      {icon}
+      <span>{label}</span>
+    </a>
+  );
+}
+
+// "active" says which link is highlighted, e.g. <Sidebar active="dashboard" />
+function Sidebar({ active = "messages" }) {
+  return (
+    <aside className="flex min-h-screen w-64 flex-col bg-slate-900 text-white">
       <div className="px-6 py-6">
-        <img
-          src={Logo}
-          alt="TOC Construction"
-          className="w-40 h-auto"
-        />
+        <img src={Logo} alt="TOC Construction" className="w-40" />
       </div>
 
-      {/* Navigation */}
       <nav className="flex-1 px-4">
-        <a
-          href="#"
-          className="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-admin-text"
-        >
-          <DashboardIcon />
-          <span>Dashboard</span>
-        </a>
+        <NavItem
+          href="/admin/dashboard"
+          label="Dashboard"
+          icon={<DashboardIcon />}
+          isActive={active === "dashboard"}
+        />
 
-        <a
+        <NavItem
           href="#"
-          className="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-admin-text"
-        >
-          <ProjectsIcon />
-          <span>Projects</span>
-        </a>
+          label="Projects"
+          icon={<ProjectsIcon />}
+          isActive={active === "projects"}
+        />
 
-        <a
+        <NavItem
           href="#"
-          className="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-admin-text"
-        >
-          <ServicesIcon />
-          <span>Services</span>
-        </a>
+          label="Services"
+          icon={<ServicesIcon />}
+          isActive={active === "services"}
+        />
 
-        <a
+        <NavItem
           href="#"
-          className="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-admin-text"
-        >
-          <CareersIcon />
-          <span>Careers</span>
-        </a>
+          label="Careers"
+          icon={<CareersIcon />}
+          isActive={active === "careers"}
+        />
 
-        {/* Active */}
-        <a
+        <NavItem
           href="/admin/messages"
-          className="flex items-center gap-3 px-4 py-3 rounded-md bg-admin-active text-sm font-medium text-white"
-        >
-          <MessagesIcon />
-          <span>Messages</span>
-        </a>
+          label="Messages"
+          icon={<MessagesIcon />}
+          isActive={active === "messages"}
+        />
 
-        <a
+        <NavItem
           href="#"
-          className="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-admin-text"
-        >
-          <SecurityIcon />
-          <span>Users</span>
-        </a>
+          label="Users"
+          icon={<SecurityIcon />}
+          isActive={active === "users"}
+        />
 
-        <a
+        <NavItem
           href="#"
-          className="flex items-center gap-3 px-4 py-3 rounded-md text-sm font-medium text-admin-text"
-        >
-          <SettingsIcon />
-          <span>Settings</span>
-        </a>
+          label="Settings"
+          icon={<SettingsIcon />}
+          isActive={active === "settings"}
+        />
       </nav>
 
-      {/* Logout */}
       <div className="px-4 pb-6">
         <button
           type="button"
-          className="flex items-center gap-3 px-4 py-3 text-sm font-medium text-admin-text"
+          className="flex cursor-pointer items-center gap-3 px-4 py-3 text-sm font-medium text-gray-400"
         >
           <LogoutIcon />
           <span>Logout</span>
