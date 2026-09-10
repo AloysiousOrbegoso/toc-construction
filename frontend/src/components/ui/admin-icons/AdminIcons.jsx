@@ -135,3 +135,133 @@ export const LogoutIcon = (props) => (
     />
   </svg>
 );
+
+/* ---------------------------------------------------------------------------
+   Dashboard icons (KPI cards, tables, quick actions)
+--------------------------------------------------------------------------- */
+export const TotalProjectsIcon = (props) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M15.75 6L9 2.25L2.25 6L9 9.75L15.75 6ZM15.75 6V12M5.25 7.5V12.75C5.25 12.75 6.75 14.25 9 14.25C11.25 14.25 12.75 12.75 12.75 12.75V7.5"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ActiveProjectsIcon = (props) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M9 4.5V9L12 10.5M16.5 9C16.5 13.1421 13.1421 16.5 9 16.5C4.85786 16.5 1.5 13.1421 1.5 9C1.5 4.85786 4.85786 1.5 9 1.5C13.1421 1.5 16.5 4.85786 16.5 9Z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const TotalClientsIcon = (props) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M12.75 15.75V14.25C12.75 13.4544 12.4339 12.6913 11.8713 12.1287C11.3087 11.5661 10.5456 11.25 9.75 11.25H4.5C3.70435 11.25 2.94129 11.5661 2.37868 12.1287C1.81607 12.6913 1.5 13.4544 1.5 14.25V15.75M16.5 15.75V14.25C16.4995 13.5853 16.2783 12.9396 15.8712 12.4142C15.4641 11.8889 14.8944 11.5137 14.25 11.3475M11.625 2.3475C12.271 2.51278 12.8425 2.88826 13.2507 3.41442C13.6589 3.94058 13.8806 4.58763 13.8806 5.25375C13.8806 5.91987 13.6589 6.56692 13.2507 7.09308C12.8425 7.61924 12.271 7.99472 11.625 8.16M9.75 5.25C9.75 6.90685 8.40685 8.25 6.75 8.25C5.09315 8.25 3.75 6.90685 3.75 5.25C3.75 3.59315 5.09315 2.25 6.75 2.25C8.40685 2.25 9.75 3.59315 9.75 5.25Z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const RevenueIcon = (props) => (
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M9 1.5V16.5M12.75 4.5H7.125C6.42881 4.5 5.76113 4.77656 5.26884 5.26884C4.77656 5.76113 4.5 6.42881 4.5 7.125C4.5 7.82119 4.77656 8.48887 5.26884 8.98116C5.76113 9.47344 6.42881 9.75 7.125 9.75H10.875C11.5712 9.75 12.2389 10.0266 12.7312 10.5188C13.2234 11.0111 13.5 11.6788 13.5 12.375C13.5 13.0712 13.2234 13.7389 12.7312 14.2312C12.2389 14.7234 11.5712 15 10.875 15H4.5"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const TrendUpIcon = (props) => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M12.25 3.5L7.875 7.875L5.625 5.625L1.75 9.5M12.25 3.5H8.75M12.25 3.5V7"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ArrowRightIcon = (props) => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M2.91669 7H11.0834M11.0834 7L7.00002 2.91667M11.0834 7L7.00002 11.0833"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const CheckIcon = (props) => (
+  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M10 3L4.5 8.5L2 6"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const AddProjectIcon = (props) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M10 4.167v11.666M4.167 10h11.666"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ManageTeamIcon = (props) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M14.167 17.5v-1.667a3.333 3.333 0 0 0-3.334-3.333H5a3.333 3.333 0 0 0-3.333 3.333V17.5M18.333 17.5v-1.667a3.333 3.333 0 0 0-2.5-3.225M12.917 2.608a3.333 3.333 0 0 1 0 6.459M10.833 5.833a3.333 3.333 0 1 1-6.666 0 3.333 3.333 0 0 1 6.666 0Z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ViewReportsIcon = (props) => (
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path
+      d="M11.667 1.667H5a1.667 1.667 0 0 0-1.667 1.666v13.334A1.667 1.667 0 0 0 5 18.333h10a1.667 1.667 0 0 0 1.667-1.666V6.667l-5-5Z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M11.667 1.667v5h5M6.667 11.667h6.666M6.667 15h6.666M6.667 8.333h1.666"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

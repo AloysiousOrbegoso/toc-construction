@@ -27,6 +27,7 @@
 
   /* Fonts */
   --font-display: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-manrope: "Manrope", "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   /* Make Tailwind's default `font-sans` resolve to the body font so
