@@ -207,10 +207,9 @@ export default function ContactInformation({ values, onChange, onContinue }) {
               <div className="sm:col-span-2 flex justify-end pt-2">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 rounded-xl bg-[#1e56a0] px-8 py-4 font-display text-lead font-bold text-white hover:bg-[#163172]"
+                  className="inline-flex items-center gap-2 rounded-xl bg-[#1e56a0] px-8 py-4 font-display text-lead font-bold text-white hover:bg-[#163172] cursor-pointer"
                 >
-                  Continue to Project Details
-                  
+                  Continue to Project Details                  
                 </button>
               </div>
             </div>

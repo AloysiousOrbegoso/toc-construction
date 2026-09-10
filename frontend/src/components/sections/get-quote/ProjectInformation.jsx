@@ -42,7 +42,7 @@ export default function ProjectInformation({ values, onChange, onBack, onContinu
                 Attachments
               </span>
             </li>
-          </ol>
+          </ol> 
         </div>
 
         <div className="mx-auto max-w-[622px]">
