@@ -19,8 +19,8 @@ env:
   # Server paths. Deploys only ever touch these four folders.
   BACKEND_DIR: /home/u850020960/toc-backend
   PUBLIC_DIR: /home/u850020960/domains/certicode.net/public_html/toc
-  ADMIN_DIR: /home/u850020960/domains/certicode.net/public_html/toc-admin
-  API_DIR: /home/u850020960/domains/certicode.net/public_html/toc-api
+  ADMIN_DIR: /home/u850020960/domains/certicode.net/public_html/tocadmin
+  API_DIR: /home/u850020960/domains/certicode.net/public_html/tocbackend
   PHP_BIN: /opt/alt/php82/usr/bin/php
 
 jobs:
