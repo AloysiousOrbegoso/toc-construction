@@ -141,7 +141,6 @@ jobs:
           trap '$PHP_BIN artisan up' EXIT
           $PHP_BIN artisan migrate --force
           $PHP_BIN artisan route:cache
-          $PHP_BIN artisan view:cache
           rsync -a --delete --exclude ".well-known" $BACKEND_DIR/public/ $API_DIR/
           sed -i "s#__DIR__.'/../#'$BACKEND_DIR/#g" $API_DIR/index.php
           SCRIPT
