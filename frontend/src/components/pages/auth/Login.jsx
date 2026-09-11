@@ -16,7 +16,7 @@ export default function Login() {
       const result = await login(form);
       localStorage.setItem("toc_token", result.token);
       localStorage.setItem("toc_user", JSON.stringify(result.user));
-      navigate("/dashboard", { replace: true });
+      navigate("/admin/dashboard", { replace: true });
     } catch (submitError) {
       setError(submitError.message);
       if (submitError.status === 429) setError(`${submitError.message} Please wait before trying again.`);

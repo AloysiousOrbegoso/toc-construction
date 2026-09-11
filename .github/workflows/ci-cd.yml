@@ -1,0 +1,162 @@
+name: CI/CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  API_URL: https://api.toc.certicode.net/api
+  # Server paths. Deploys only ever touch these four folders.
+  BACKEND_DIR: /home/u850020960/toc-backend
+  PUBLIC_DIR: /home/u850020960/domains/certicode.net/public_html/toc
+  ADMIN_DIR: /home/u850020960/domains/certicode.net/public_html/tocadmin
+  API_DIR: /home/u850020960/domains/certicode.net/public_html/tocbackend
+  PHP_BIN: /opt/alt/php82/usr/bin/php
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - name: Dependency audit (fails on high or critical)
+        run: npm audit --omit=dev --audit-level=high
+      - name: Build public site
+        run: npm run build:public
+        env:
+          VITE_API_URL: ${{ env.API_URL }}
+      - name: Build admin site
+        run: npm run build:admin
+        env:
+          VITE_API_URL: ${{ env.API_URL }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frontend-builds
+          include-hidden-files: true
+          path: |
+            frontend/dist
+            frontend/dist-admin
+          retention-days: 7
+
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+          extensions: mbstring, pdo_mysql, openssl
+          tools: composer:v2
+      - run: composer validate --no-check-publish
+      - run: composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+      - name: Dependency audit
+        run: composer audit --no-dev
+      - name: PHP syntax check
+        run: find app bootstrap config database routes public -name "*.php" -print0 | xargs -0 -n1 php -l > /dev/null
+      - name: Laravel boots and routes load
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force
+          php artisan route:list
+          rm .env
+      - uses: actions/upload-artifact@v4
+        with:
+          name: backend-build
+          include-hidden-files: true
+          path: |
+            backend
+            !backend/.env
+          retention-days: 7
+
+  deploy:
+    needs: [frontend, backend]
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: frontend-builds
+          path: frontend
+      - uses: actions/download-artifact@v4
+        with:
+          name: backend-build
+          path: backend
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.HOSTINGER_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          echo "${{ secrets.HOSTINGER_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          cat > ~/.ssh/config <<CFG
+          Host hostinger
+            HostName ${{ secrets.HOSTINGER_SSH_HOST }}
+            Port ${{ secrets.HOSTINGER_SSH_PORT }}
+            User ${{ secrets.HOSTINGER_SSH_USER }}
+            IdentityFile ~/.ssh/deploy_key
+            StrictHostKeyChecking yes
+          CFG
+
+      - name: Check server is prepared
+        run: |
+          ssh hostinger "test -f $BACKEND_DIR/.env && test -d $PUBLIC_DIR && test -d $ADMIN_DIR && test -d $API_DIR" \
+            || { echo "Server not prepared. See the one-time setup steps."; exit 1; }
+
+      - name: Upload backend code
+        run: |
+          rsync -az --delete \
+            --exclude "/.env" --exclude "/storage/" --exclude "/bootstrap/cache/*.php" \
+            backend/ hostinger:$BACKEND_DIR/
+          # Create storage folders on first deploy only, never overwrite uploads or logs
+          rsync -az --ignore-existing backend/storage/ hostinger:$BACKEND_DIR/storage/
+
+      - name: Migrate and publish API
+        run: |
+          ssh hostinger "bash -s" <<SCRIPT
+          set -euo pipefail
+          cd $BACKEND_DIR
+          $PHP_BIN artisan down --retry=30 || true
+          trap '$PHP_BIN artisan up' EXIT
+          $PHP_BIN artisan migrate --force
+          $PHP_BIN artisan route:cache
+          $PHP_BIN artisan view:cache
+          rsync -a --delete --exclude ".well-known" $BACKEND_DIR/public/ $API_DIR/
+          sed -i "s#__DIR__.'/../#'$BACKEND_DIR/#g" $API_DIR/index.php
+          SCRIPT
+
+      - name: Upload public and admin sites
+        run: |
+          rsync -az --delete --exclude ".well-known" frontend/dist/ hostinger:$PUBLIC_DIR/
+          rsync -az --delete --exclude ".well-known" frontend/dist-admin/ hostinger:$ADMIN_DIR/
+
+      - name: Smoke test
+        run: |
+          curl -fsS -o /dev/null https://toc.certicode.net
+          curl -fsS -o /dev/null https://admin.toc.certicode.net
+          curl -fsS -o /dev/null https://api.toc.certicode.net/up
+
+      - name: Remove SSH key
+        if: always()
+        run: rm -f ~/.ssh/deploy_key

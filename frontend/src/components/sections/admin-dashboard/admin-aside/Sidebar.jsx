@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../../../../assets/logo_clear.png";
 
 import {
@@ -13,8 +14,8 @@ import {
 
 function NavItem({ href, label, icon, isActive }) {
   return (
-    <a
-      href={href}
+    <Link
+      to={href}
       className={
         "flex items-center gap-3 rounded-md px-4 py-3 text-sm font-medium " +
         (isActive ? "bg-blue-700 text-white" : "text-gray-400")
@@ -22,7 +23,7 @@ function NavItem({ href, label, icon, isActive }) {
     >
       {icon}
       <span>{label}</span>
-    </a>
+    </Link>
   );
 }
 
@@ -43,21 +44,21 @@ function Sidebar({ active = "messages" }) {
         />
 
         <NavItem
-          href="#"
+          href="/admin/projects"
           label="Projects"
           icon={<ProjectsIcon />}
           isActive={active === "projects"}
         />
 
         <NavItem
-          href="#"
+          href="/admin/services"
           label="Services"
           icon={<ServicesIcon />}
           isActive={active === "services"}
         />
 
         <NavItem
-          href="#"
+          href="/admin/careers"
           label="Careers"
           icon={<CareersIcon />}
           isActive={active === "careers"}
@@ -71,14 +72,14 @@ function Sidebar({ active = "messages" }) {
         />
 
         <NavItem
-          href="#"
+          href="/admin/users"
           label="Users"
           icon={<SecurityIcon />}
           isActive={active === "users"}
         />
 
         <NavItem
-          href="#"
+          href="/admin/settings"
           label="Settings"
           icon={<SettingsIcon />}
           isActive={active === "settings"}

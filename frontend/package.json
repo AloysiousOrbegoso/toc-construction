@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "TOC Construction marketing page — About, Projects, Careers, CTA, Testimonials, Footer.",
+  "description": "TOC Construction marketing page \u2014 About, Projects, Careers, CTA, Testimonials, Footer.",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -17,7 +17,10 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:admin": "vite --mode admin",
     "build": "vite build",
+    "build:public": "vite build",
+    "build:admin": "vite build --mode admin",
     "preview": "vite preview"
   }
 }
