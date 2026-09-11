@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  API_URL: https://api.toc.certicode.net/api
+  API_URL: https://tocbackend.certicode.net/api
   # Server paths. Deploys only ever touch these four folders.
   BACKEND_DIR: /home/u850020960/toc-backend
   PUBLIC_DIR: /home/u850020960/domains/certicode.net/public_html/toc
@@ -153,8 +153,8 @@ jobs:
       - name: Smoke test
         run: |
           curl -fsS -o /dev/null https://toc.certicode.net
-          curl -fsS -o /dev/null https://admin.toc.certicode.net
-          curl -fsS -o /dev/null https://api.toc.certicode.net/up
+          curl -fsS -o /dev/null https://tocadmin.certicode.net
+          curl -fsS -o /dev/null https://tocbackend.certicode.net/up
 
       - name: Remove SSH key
         if: always()
