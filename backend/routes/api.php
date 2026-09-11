@@ -19,6 +19,8 @@ Route::post('/quote-requests', [QuoteRequestController::class, 'store'])
 Route::post('/job-applications', [JobApplicationController::class, 'store'])
     ->middleware('throttle:5,1');
 Route::post('/auth/login', [AuthController::class, 'login']);
-Route::post('/auth/forgot-password', [AuthController::class, 'forgotPassword']);
-Route::post('/auth/reset-password', [AuthController::class, 'resetPassword']);
+Route::post('/auth/forgot-password', [AuthController::class, 'forgotPassword'])
+    ->middleware('throttle:5,1');
+Route::post('/auth/reset-password', [AuthController::class, 'resetPassword'])
+    ->middleware('throttle:5,1');
 Route::middleware('auth:api')->get('/auth/me', [AuthController::class, 'me']);
